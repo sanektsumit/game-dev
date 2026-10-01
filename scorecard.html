@@ -1,0 +1,1559 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
+  <title>Wah Kya Energy Hai! · Official Scorecard</title>
+  
+  <!-- Open Graph / WhatsApp / Social Media Meta Tags -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="GAIL #WahKyaENERGYHai" />
+  <meta property="og:title" content="⚡ Wah Kya Energy Hai! · Clean Choice Scorecard" />
+  <meta property="og:description" content="Check out my Energy Scorecard on GAIL #WahKyaENERGYHai Clean Choice Challenge! Every 10 days, top 5 win Geotagged Trees planted in their name!" />
+  <meta property="og:image" content="https://gail-connect-d9e21.web.app/campaign_banner.png?v=2" />
+  <meta property="og:image:secure_url" content="https://gail-connect-d9e21.web.app/campaign_banner.png?v=2" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="GAIL #WahKyaEnergyHai · Clean Energy Challenge" />
+  <meta property="og:url" content="https://gail-connect-d9e21.web.app/scorecard" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="⚡ Wah Kya Energy Hai! · Energy Scorecard" />
+  <meta name="twitter:description" content="Can you beat my score? Play GAIL Clean Choice Challenge to win Geotagged Trees!" />
+  <meta name="twitter:image" content="https://gail-connect-d9e21.web.app/campaign_banner.png?v=2" />
+
+  <!-- Apple iOS / Safari Compatibility Meta Tags -->
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Wah Kya Energy" />
+  <meta name="format-detection" content="telephone=no, date=no, address=no, email=no" />
+  <link rel="apple-touch-icon" href="gail_logo.png" />
+  
+  <style>
+    :root {
+      --g: #22c55e;
+      --lime: #a3e635;
+      --y: #facc15;
+      --gold: #fbbf24;
+      --bg: #050d0a;
+      --t: #f0fdf4;
+      --sat: env(safe-area-inset-top, 0px);
+      --sab: env(safe-area-inset-bottom, 0px);
+      --sal: env(safe-area-inset-left, 0px);
+      --sar: env(safe-area-inset-right, 0px);
+    }
+
+    * {
+      box-sizing: border-box;
+      -webkit-tap-highlight-color: transparent;
+      -webkit-touch-callout: none;
+      -webkit-user-select: none;
+      user-select: none;
+    }
+
+    html {
+      height: 100%;
+      height: -webkit-fill-available;
+    }
+
+    body {
+      margin: 0;
+      height: 100%;
+      min-height: 100vh;
+      min-height: -webkit-fill-available;
+      min-height: 100dvh;
+      background: #000;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", system-ui, Roboto, sans-serif;
+      color: var(--t);
+      overflow: hidden;
+      overscroll-behavior: none;
+      -webkit-overscroll-behavior: none;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    .phone {
+      max-width: 430px;
+      height: 100%;
+      height: 100vh;
+      height: -webkit-fill-available;
+      height: 100dvh;
+      margin: 0 auto;
+      position: relative;
+      background: radial-gradient(ellipse at 50% 20%, #14532d 0%, var(--bg) 55%);
+      overflow: hidden;
+      -webkit-transform: translateZ(0);
+      transform: translateZ(0);
+    }
+
+    /* Top bar */
+    .top {
+      position: absolute;
+      top: calc(var(--sat) + 18px);
+      left: max(12px, var(--sal));
+      right: max(12px, var(--sar));
+      z-index: 21;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      height: 42px;
+    }
+
+    .avatar {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: #FFFFFF;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 2px solid var(--gold);
+      flex-shrink: 0;
+      overflow: hidden;
+      padding: 1px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
+    }
+
+    .avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      border-radius: 50%;
+      display: block;
+    }
+
+    .who {
+      flex: 1;
+    }
+
+    .who strong {
+      display: block;
+      font-size: 13px;
+    }
+
+    .who span {
+      font-size: 11px;
+      opacity: .75;
+    }
+
+    .gail-logo-badge {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      cursor: pointer;
+    }
+
+    .gail-logo-badge img {
+      height: 30px;
+      width: auto;
+      max-width: 50px;
+      object-fit: contain;
+      filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.45));
+      transition: transform .2s ease;
+      display: block;
+      -webkit-user-drag: none;
+    }
+
+    .gail-logo-badge img:hover,
+    .gail-logo-badge img:active {
+      transform: scale(1.06);
+    }
+
+    /* Scorecard Slide */
+    .scorecard-container {
+      position: absolute;
+      inset: 0;
+      padding: calc(var(--sat) + 68px) 14px calc(var(--sab) + 14px);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      gap: 9px;
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+      animation: pop .28s ease;
+    }
+
+    @keyframes pop {
+      from { opacity: .4; transform: scale(1.02); }
+      to { opacity: 1; transform: none; }
+    }
+
+    .sharebox {
+      background: linear-gradient(180deg, rgba(20, 83, 45, 0.55) 0%, rgba(5, 46, 22, 0.78) 100%);
+      border: 1.5px solid rgba(74, 222, 128, 0.4);
+      border-radius: 20px;
+      padding: 14px 12px;
+      text-align: center;
+      -webkit-backdrop-filter: blur(18px);
+      backdrop-filter: blur(18px);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+      position: relative;
+    }
+
+    .sharebox-header {
+      font-size: 10.5px;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      color: var(--lime);
+      text-transform: uppercase;
+      margin-bottom: 2px;
+    }
+
+    .sharebox .big {
+      font-size: 56px;
+      font-weight: 900;
+      color: var(--y);
+      line-height: 1;
+      text-shadow: 0 0 24px rgba(250, 204, 21, 0.45);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+      margin: 2px 0;
+    }
+
+    .sharebox .level-title {
+      font-size: 15.5px;
+      color: #86efac;
+      font-weight: 800;
+      letter-spacing: 0.03em;
+      margin-bottom: 8px;
+    }
+
+    /* Unified Single-Row Stats Strip */
+    .unified-stats-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      background: rgba(4, 29, 16, 0.75);
+      border: 1px solid rgba(34, 197, 94, 0.35);
+      border-radius: 12px;
+      padding: 6px 8px;
+      margin-bottom: 8px;
+    }
+
+    .unified-stat-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      flex: 1;
+    }
+
+    .unified-stat-val {
+      font-size: 13.5px;
+      font-weight: 800;
+      color: #f0fdf4;
+    }
+
+    .unified-stat-label {
+      font-size: 9px;
+      color: var(--lime);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-top: 1px;
+    }
+
+    .unified-stat-sep {
+      width: 1px;
+      height: 22px;
+      background: rgba(255, 255, 255, 0.15);
+    }
+
+    /* Compact Badges */
+    .badges-compact {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+      justify-content: center;
+      margin: 6px 0;
+    }
+
+    .badge-pill {
+      background: rgba(5, 46, 22, 0.85);
+      border: 1px solid rgba(34, 197, 94, 0.4);
+      border-radius: 999px;
+      padding: 3px 8px;
+      font-size: 10.5px;
+      font-weight: 600;
+      color: #dcfce7;
+      display: inline-flex;
+      align-items: center;
+      gap: 3px;
+    }
+
+    .sharebox-logo {
+      margin-top: 6px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .sharebox-logo img {
+      height: 26px;
+      width: auto;
+      max-width: 75%;
+      object-fit: contain;
+      filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.5));
+    }
+
+    /* Action Buttons Grid */
+    .action-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+    }
+
+    .action-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 11px 8px;
+      border-radius: 14px;
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+      touch-action: manipulation;
+      transition: transform 0.15s ease, opacity 0.15s ease;
+      border: 0;
+      -webkit-appearance: none;
+      text-decoration: none;
+    }
+
+    .action-btn:active { transform: scale(0.97); }
+
+    .action-btn-hero {
+      grid-column: span 2;
+      background: linear-gradient(135deg, #25D366, #128C7E);
+      color: #fff;
+      font-weight: 800;
+      font-size: 15px;
+      padding: 13px;
+      box-shadow: 0 4px 18px rgba(37, 211, 102, 0.35);
+    }
+
+    .action-btn-secondary {
+      background: rgba(30, 41, 59, 0.7);
+      border: 1.5px solid rgba(255, 255, 255, 0.25);
+      color: #fff;
+    }
+
+    .action-btn-secondary:hover, .action-btn-secondary:active {
+      background: rgba(51, 65, 85, 0.85);
+      border-color: rgba(255, 255, 255, 0.45);
+    }
+
+    .action-btn-lb {
+      background: rgba(20, 83, 45, 0.6);
+      border: 1.5px solid rgba(250, 204, 21, 0.4);
+      color: var(--y);
+    }
+
+    /* Compact Leaderboard Submit Card */
+    .lb-compact-card {
+      background: rgba(15, 23, 42, 0.68);
+      border: 1px solid rgba(34, 197, 94, 0.4);
+      border-radius: 15px;
+      padding: 9px 12px;
+      text-align: center;
+      -webkit-backdrop-filter: blur(12px);
+      backdrop-filter: blur(12px);
+    }
+
+    .lb-compact-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 6px;
+    }
+
+    .lb-compact-title {
+      font-size: 12px;
+      font-weight: 800;
+      color: var(--y);
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .lb-compact-tree-tag {
+      font-size: 9.5px;
+      background: #22c55e;
+      color: #052e16;
+      padding: 2px 6px;
+      border-radius: 999px;
+      font-weight: 800;
+    }
+
+    .lb-compact-row {
+      display: flex;
+      gap: 6px;
+    }
+
+    .lb-compact-input {
+      flex: 1;
+      background: rgba(4, 29, 16, 0.75);
+      border: 1px solid rgba(34, 197, 94, 0.5);
+      border-radius: 10px;
+      padding: 8px 10px;
+      color: #fff;
+      font-size: 12px;
+      font-weight: 600;
+      outline: none;
+      -webkit-user-select: auto;
+      user-select: auto;
+      min-width: 0;
+    }
+
+    .lb-compact-input::placeholder {
+      color: rgba(134, 239, 172, 0.6);
+    }
+
+    .lb-compact-btn {
+      background: linear-gradient(135deg, var(--g), #16a34a);
+      color: #052e16;
+      border: 0;
+      border-radius: 10px;
+      padding: 8px 13px;
+      font-size: 12px;
+      font-weight: 800;
+      cursor: pointer;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .lb-compact-btn:active { transform: scale(0.97); }
+
+    .replay-link-btn {
+      background: transparent;
+      border: 0;
+      color: rgba(255, 255, 255, 0.75);
+      font-size: 12.5px;
+      font-weight: 700;
+      padding: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+      cursor: pointer;
+      margin: 0 auto;
+      text-decoration: none;
+    }
+
+    .replay-link-btn:hover,
+    .replay-link-btn:active { color: #fff; transform: scale(0.97); }
+
+    /* Toast */
+    .toast {
+      position: absolute;
+      left: 50%;
+      top: 45%;
+      transform: translate(-50%, -50%) scale(.9);
+      -webkit-transform: translate(-50%, -50%) scale(.9);
+      background: #052e16ee;
+      border: 2px solid var(--g);
+      color: var(--lime);
+      padding: 16px 20px;
+      border-radius: 20px;
+      font-weight: 800;
+      font-size: 17px;
+      opacity: 0;
+      pointer-events: none;
+      transition: .25s;
+      z-index: 60;
+      text-align: center;
+      max-width: 88%;
+      -webkit-backdrop-filter: blur(16px);
+      backdrop-filter: blur(16px);
+    }
+
+    .toast.show { opacity: 1; transform: translate(-50%, -50%) scale(1); -webkit-transform: translate(-50%, -50%) scale(1); }
+
+    /* Leaderboard Modal */
+    .modal-backdrop {
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.88);
+      -webkit-backdrop-filter: blur(14px);
+      backdrop-filter: blur(14px);
+      z-index: 50;
+      display: none;
+      flex-direction: column;
+      padding: calc(var(--sat) + 20px) 16px calc(var(--sab) + 16px);
+      animation: fadeIn .2s ease;
+    }
+
+    .modal-backdrop.open { display: flex; }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.97); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    .modal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 12px;
+      border-bottom: 1px solid #ffffff22;
+    }
+
+    .modal-title {
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--y);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .modal-close {
+      background: #ffffff22;
+      border: 0;
+      color: #fff;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      font-size: 16px;
+      cursor: pointer;
+      display: grid;
+      place-items: center;
+    }
+
+    .lb-ticker-card {
+      background: linear-gradient(135deg, rgba(20, 83, 45, 0.9), rgba(6, 78, 59, 0.95));
+      border: 1.5px solid #4ade8099;
+      border-radius: 14px;
+      padding: 10px 12px;
+      margin-bottom: 9px;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+    }
+
+    .lb-ticker-card-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 6px;
+      margin-bottom: 6px;
+    }
+
+    .lb-cycle-badge {
+      background: #22c55e;
+      color: #052e16;
+      font-size: 10px;
+      font-weight: 900;
+      padding: 2px 8px;
+      border-radius: 99px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .lb-countdown-pill {
+      font-size: 11.5px;
+      font-weight: 800;
+      color: #fef08a;
+      background: rgba(0, 0, 0, 0.4);
+      border: 1px solid rgba(250, 204, 21, 0.6);
+      padding: 2px 9px;
+      border-radius: 99px;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .lb-schedule-note {
+      font-size: 11.5px;
+      line-height: 1.35;
+      color: #dcfce7;
+    }
+
+    .lb-schedule-note strong {
+      color: #facc15;
+    }
+
+    .lb-tabs-row {
+      display: flex;
+      gap: 6px;
+      margin-bottom: 8px;
+    }
+
+    .lb-tab-btn {
+      flex: 1;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: #ecfdf5;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 7px 4px;
+      border-radius: 8px;
+      cursor: pointer;
+      text-align: center;
+      font-family: inherit;
+      transition: all 0.2s ease;
+    }
+
+    .lb-tab-btn.active {
+      background: #22c55e;
+      color: #052e16;
+      border-color: #22c55e;
+      font-weight: 800;
+      box-shadow: 0 2px 8px rgba(34, 197, 94, 0.35);
+    }
+
+    .lb-cooldown-badge {
+      background: rgba(245, 158, 11, 0.2);
+      border: 1px solid #f59e0b;
+      color: #fde68a;
+      font-size: 9px;
+      font-weight: 800;
+      padding: 1px 6px;
+      border-radius: 99px;
+      display: inline-block;
+    }
+
+    .lb-speed-tag {
+      background: rgba(250, 204, 21, 0.2);
+      border: 1px solid rgba(250, 204, 21, 0.5);
+      color: #fef08a;
+      font-size: 9.5px;
+      font-weight: 800;
+      padding: 1px 6px;
+      border-radius: 999px;
+      display: inline-block;
+    }
+
+    .lb-list {
+      flex: 1;
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      padding-right: 2px;
+    }
+
+    .lb-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 12px;
+      border-radius: 14px;
+      background: #022c16aa;
+      border: 1px solid #22c55e33;
+      font-size: 13px;
+    }
+
+    .lb-item.top-five {
+      border-color: #facc15aa;
+      background: linear-gradient(90deg, rgba(20, 83, 45, 0.9), rgba(6, 78, 59, 0.7));
+      box-shadow: 0 0 10px rgba(250, 204, 21, 0.15);
+    }
+
+    .lb-rank {
+      font-size: 14px;
+      font-weight: 900;
+      width: 28px;
+      color: var(--y);
+      text-align: center;
+    }
+
+    .lb-info { flex: 1; min-width: 0; }
+
+    .lb-name {
+      font-weight: 700;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      color: #fff;
+    }
+
+    .lb-meta {
+      font-size: 11px;
+      color: #86efac;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .lb-tree-badge {
+      background: #22c55e;
+      color: #052e16;
+      font-size: 9.5px;
+      font-weight: 800;
+      padding: 1px 6px;
+      border-radius: 999px;
+      display: inline-block;
+    }
+
+    .lb-score-col { text-align: right; }
+    .lb-score { font-size: 15px; font-weight: 900; color: var(--y); }
+    .lb-time { font-size: 10.5px; color: var(--lime); }
+  </style>
+</head>
+
+<body>
+  <div class="phone" id="app">
+    <!-- Top Header -->
+    <div class="top">
+      <div class="avatar" title="GAIL (India) Limited">
+        <img src="gail_logo.png" alt="GAIL" />
+      </div>
+      <div class="who">
+        <strong>WahKyaEnergyHai</strong>
+        <span> · Clean Choice Challenge</span>
+      </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast"></div>
+
+    <!-- Scorecard Content -->
+    <div class="scorecard-container" id="scorecardContainer">
+      <!-- Main Hero Scorecard -->
+      <div class="sharebox">
+        <div class="sharebox-header">⚡ YOUR ENERGY SCORECARD</div>
+        <div class="big" id="scoreDisplay">245 ⚡</div>
+        <div class="level-title" id="levelDisplay">🏆 WAH KYA ENERGY MASTER</div>
+
+        <!-- Unified Single-Row Stats Bar -->
+        <div class="unified-stats-bar">
+          <div class="unified-stat-item">
+            <span class="unified-stat-val" id="timeDisplay">⏱️ 24s</span>
+            <span class="unified-stat-label">Total Time</span>
+          </div>
+          <div class="unified-stat-sep"></div>
+          <div class="unified-stat-item">
+            <span class="unified-stat-val" id="speedDisplay">⚡ +50</span>
+            <span class="unified-stat-label">Speed Bonus</span>
+          </div>
+          <div class="unified-stat-sep"></div>
+          <div class="unified-stat-item">
+            <span class="unified-stat-val" id="streakDisplay">🔥 10</span>
+            <span class="unified-stat-label">Streak</span>
+          </div>
+        </div>
+
+        <!-- Badges -->
+        <div class="badges-compact" id="badgesDisplay">
+          <span class="badge-pill">🚗 Clean Commuter</span>
+          <span class="badge-pill">🔥 Clean Cook</span>
+          <span class="badge-pill">☀️ Sun Power</span>
+          <span class="badge-pill">♻️ Waste Warrior</span>
+          <span class="badge-pill">💡 Energy Saver</span>
+          <span class="badge-pill">📢 Green Voice</span>
+          <span class="badge-pill">⚡ Wah Kya Energy!</span>
+        </div>
+
+        <div class="sharebox-logo">
+          <img src="logo_3d_clean_transparent.png" alt="Wah Kya Energy Hai" />
+        </div>
+      </div>
+
+      <!-- Professional Action Grid -->
+      <div class="action-grid">
+        <button class="action-btn action-btn-hero" onclick="shareOnWhatsApp()">
+          💬 SHARE ON WHATSAPP (+ IMAGE)
+        </button>
+        <button class="action-btn action-btn-secondary" onclick="downloadScorecard()">
+          📥 DOWNLOAD PNG
+        </button>
+        <button class="action-btn action-btn-lb" onclick="openLeaderboard()">
+          🏆 LEADERBOARD
+        </button>
+      </div>
+
+      <!-- Sleek Compact Leaderboard Claim -->
+      <div class="lb-compact-card" id="lbSubmitBox">
+        <div class="lb-compact-header">
+          <div class="lb-compact-title">🏆 Claim Leaderboard Rank</div>
+          <span class="lb-compact-tree-tag">🌱 Win Geotagged Tree</span>
+        </div>
+        <div id="lbSubmitFormWrap">
+          <div class="lb-compact-row">
+            <input type="text" class="lb-compact-input" id="playerName" placeholder="Your Name" maxlength="20" />
+            <input type="text" class="lb-compact-input" id="playerCity" placeholder="City" maxlength="20" />
+            <button class="lb-compact-btn" onclick="submitScore()">SUBMIT 🚀</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Play Challenge CTA / Replay Link -->
+      <a href="index.html" class="replay-link-btn">
+        🔄 Play Again
+      </a>
+    </div>
+
+    <!-- Leaderboard Modal -->
+    <div class="modal-backdrop" id="leaderboardModal">
+      <div class="modal-header">
+        <div class="modal-title">🏆 All-India Leaderboard</div>
+        <button class="modal-close" onclick="closeLeaderboard()">✕</button>
+      </div>
+      <!-- Live Contest Ticker & Reset Schedule Banner -->
+      <div class="lb-ticker-card">
+        <div class="lb-ticker-card-top">
+          <span class="lb-cycle-badge" id="modalCycleBadge">Loading Cycle...</span>
+          <span class="lb-countdown-pill" id="modalCountdownTicker">⏱️ Calculating...</span>
+        </div>
+        <div class="lb-schedule-note">
+          🔄 <strong>Resets on 10th, 20th & end of month.</strong> Top 5 unique players with highest Score + Speed rating win <strong>Geotagged Trees</strong> planted by GAIL!
+          <div style="margin-top:3px;font-size:10.5px;color:#86efac;">
+            🛡️ <strong>Fair Play:</strong> Winners are unique for <strong>2 months</strong> (repeat win allowed after 60 days).
+          </div>
+        </div>
+      </div>
+
+      <!-- View Selector Tabs -->
+      <div class="lb-tabs-row">
+        <button class="lb-tab-btn active" id="lbTabActive" onclick="switchLbTab('active')">
+          ⚡ Active Cycle Rankings
+        </button>
+        <button class="lb-tab-btn" id="lbTabWinners" onclick="switchLbTab('winners')">
+          🌳 Past Winners (60d Log)
+        </button>
+      </div>
+
+      <div class="lb-list" id="leaderboardList"></div>
+      <div style="margin-top:10px;">
+        <button class="action-btn action-btn-hero" onclick="closeLeaderboard()">CLOSE LEADERBOARD</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Hidden canvas for generating high-res downloadable scorecards -->
+  <canvas id="scorecardCanvas" width="760" height="550" style="display:none;"></canvas>
+
+  <script>
+    // URL Query Parameter Parser
+    const urlParams = new URLSearchParams(window.location.search);
+    const score = parseInt(urlParams.get('score')) || 245;
+    const totalTimeSec = parseInt(urlParams.get('time')) || 24;
+    const totalSpeedBonus = parseInt(urlParams.get('speed')) || 50;
+    const maxStreak = parseInt(urlParams.get('streak')) || 10;
+    let isSubmitted = false;
+
+    // Determine Level Title
+    function getLevelTitle(s) {
+      if (s >= 155) return '🏆 WAH KYA ENERGY MASTER';
+      if (s >= 120) return '🌿 Clean Energy Champion';
+      if (s >= 80) return '⚡ Energy Pro';
+      if (s >= 40) return '🌱 Green Starter';
+      return '🌫️ Energy Explorer';
+    }
+
+    const currentLevelTitle = urlParams.get('level') || getLevelTitle(score);
+
+    // Apply values to DOM
+    document.getElementById('scoreDisplay').textContent = `${score} ⚡`;
+    document.getElementById('levelDisplay').textContent = currentLevelTitle;
+    document.getElementById('timeDisplay').textContent = `⏱️ ${totalTimeSec}s`;
+    document.getElementById('speedDisplay').textContent = `⚡ +${totalSpeedBonus}`;
+    document.getElementById('streakDisplay').textContent = `🔥 ${maxStreak}`;
+
+    // Badges array
+    let badges = [
+      '🚗 Clean Commuter',
+      '🔥 Clean Cook',
+      '☀️ Sun Power',
+      '♻️ Waste Warrior',
+      '💡 Energy Saver',
+      '📢 Green Voice',
+      '⚡ Wah Kya Energy!'
+    ];
+
+    if (urlParams.has('badges')) {
+      try {
+        const parsed = JSON.parse(urlParams.get('badges'));
+        if (Array.isArray(parsed) && parsed.length) badges = parsed;
+      } catch (e) {
+        badges = urlParams.get('badges').split(',').map(b => b.trim());
+      }
+    }
+
+    const badgesContainer = document.getElementById('badgesDisplay');
+    badgesContainer.innerHTML = badges.map(b => `<span class="badge-pill">${b}</span>`).join('');
+
+    // Toast
+    function toast(msg) {
+      const t = document.getElementById('toast');
+      t.textContent = msg;
+      t.className = 'toast show';
+      clearTimeout(toast._t);
+      toast._t = setTimeout(() => t.classList.remove('show'), 1400);
+    }
+
+    // --- CONTEST CYCLES (Resets on 10th, 20th & end of month) ---
+    const SIXTY_DAYS_MS = 60 * 24 * 60 * 60 * 1000;
+    const STORAGE_KEY_LB_CYCLE = 'gail_wah_kya_lb_cycle_v4';
+    const STORAGE_KEY_PAST_WINNERS = 'gail_past_winners_v3';
+    const STORAGE_KEY_ORGANIZER_LOG = 'gail_organizer_entries_v1';
+
+    function getContestCycleInfo(now = new Date()) {
+      const y = now.getFullYear();
+      const m = now.getMonth();
+      const d = now.getDate();
+      const lastDay = new Date(y, m + 1, 0).getDate();
+
+      let cycleId, periodLabel, endTarget;
+
+      if (d <= 10) {
+        cycleId = `${y}-${String(m + 1).padStart(2, '0')}-P1`;
+        periodLabel = `1st – 10th Cycle`;
+        endTarget = new Date(y, m, 10, 23, 59, 59, 999);
+      } else if (d <= 20) {
+        cycleId = `${y}-${String(m + 1).padStart(2, '0')}-P2`;
+        periodLabel = `11th – 20th Cycle`;
+        endTarget = new Date(y, m, 20, 23, 59, 59, 999);
+      } else {
+        cycleId = `${y}-${String(m + 1).padStart(2, '0')}-P3`;
+        periodLabel = `21st – ${lastDay}th Cycle`;
+        endTarget = new Date(y, m, lastDay, 23, 59, 59, 999);
+      }
+
+      const diffMs = Math.max(0, endTarget.getTime() - now.getTime());
+      const diffSec = Math.floor(diffMs / 1000);
+      const days = Math.floor(diffSec / 86400);
+      const hours = Math.floor((diffSec % 86400) / 3600);
+      const mins = Math.floor((diffSec % 3600) / 60);
+      const secs = diffSec % 60;
+
+      return {
+        cycleId,
+        periodLabel,
+        endTarget,
+        diffMs,
+        days,
+        hours,
+        mins,
+        secs,
+        tickerText: `${days}d ${hours}h ${mins}m ${secs}s left · Hurry now!`,
+        shortTicker: `${days}d ${hours}h ${mins}m ${secs}s left`
+      };
+    }
+
+    const DEFAULT_LEADERBOARD = [
+      { name: 'Aarav Sharma', city: 'New Delhi', score: 184, time: 31, date: 'Today' },
+      { name: 'Priya Kulkarni', city: 'Noida', score: 177, time: 34, date: 'Today' },
+      { name: 'Vikram Mehta', city: 'Mumbai', score: 169, time: 38, date: 'Yesterday' },
+      { name: 'Ananya Roy', city: 'Bengaluru', score: 162, time: 35, date: 'Yesterday' },
+      { name: 'Rohan Gupta', city: 'GAIL Pata', score: 156, time: 41, date: '2d ago' },
+      { name: 'Kavita Iyer', city: 'Chennai', score: 180, time: 33, date: 'Today' },
+      { name: 'Sunita Mehra', city: 'Lucknow', score: 150, time: 42, date: '3d ago' }
+    ];
+
+    function getPastWinners() {
+      try {
+        const saved = localStorage.getItem(STORAGE_KEY_PAST_WINNERS);
+        if (saved) return JSON.parse(saved);
+      } catch (e) {}
+      return [
+        {
+          name: 'Kavita Iyer',
+          city: 'Chennai',
+          email: 'kavita.iyer@example.com',
+          wonTimestamp: Date.now() - (15 * 24 * 60 * 60 * 1000),
+          wonCycleId: '2026-09-P1',
+          score: 188,
+          rating: 232
+        },
+        {
+          name: 'Deepak Verma',
+          city: 'GAIL Vijaipur',
+          email: 'deepak.v@example.com',
+          wonTimestamp: Date.now() - (42 * 24 * 60 * 60 * 1000),
+          wonCycleId: '2026-08-P2',
+          score: 182,
+          rating: 226
+        },
+        {
+          name: 'Rajesh Nair',
+          city: 'Kochi',
+          email: 'rajesh.nair@example.com',
+          wonTimestamp: Date.now() - (75 * 24 * 60 * 60 * 1000),
+          wonCycleId: '2026-07-P1',
+          score: 179,
+          rating: 220
+        }
+      ];
+    }
+
+    function savePastWinners(winners) {
+      try {
+        localStorage.setItem(STORAGE_KEY_PAST_WINNERS, JSON.stringify(winners));
+      } catch (e) {}
+    }
+
+    function check60DayCooldown(player, now = Date.now()) {
+      const pastWinners = getPastWinners();
+      const pEmail = (player.email || '').trim().toLowerCase();
+      const pName = (player.name || '').trim().toLowerCase();
+
+      for (const pw of pastWinners) {
+        const pwEmail = (pw.email || '').trim().toLowerCase();
+        const pwName = (pw.name || '').trim().toLowerCase();
+
+        const match = (pEmail && pwEmail && pEmail === pwEmail) || (pName && pwName && pName === pwName);
+        if (match) {
+          const elapsed = now - (pw.wonTimestamp || 0);
+          if (elapsed < SIXTY_DAYS_MS) {
+            const daysLeft = Math.ceil((SIXTY_DAYS_MS - elapsed) / (24 * 60 * 60 * 1000));
+            return { isCooldown: true, daysLeft, wonCycleId: pw.wonCycleId };
+          }
+        }
+      }
+      return { isCooldown: false };
+    }
+
+    function archiveCycleWinners(entries, cycleId) {
+      sortLeaderboard(entries);
+      const pastWinners = getPastWinners();
+      const now = Date.now();
+      let winnersAdded = 0;
+      const seenInCycle = new Set();
+
+      for (const item of entries) {
+        const key = (item.email || item.name || '').trim().toLowerCase();
+        if (seenInCycle.has(key)) continue;
+        seenInCycle.add(key);
+
+        const cd = check60DayCooldown(item, now);
+        if (cd.isCooldown) continue;
+
+        pastWinners.unshift({
+          name: item.name,
+          city: item.city || 'India',
+          email: item.email || '',
+          wonTimestamp: now,
+          wonCycleId: cycleId || 'Previous Cycle',
+          score: item.score,
+          rating: getLeaderboardRating(item)
+        });
+        winnersAdded++;
+        if (winnersAdded >= 5) break;
+      }
+      savePastWinners(pastWinners);
+    }
+
+    function getLeaderboard() {
+      const cycleInfo = getContestCycleInfo();
+      try {
+        const raw = localStorage.getItem(STORAGE_KEY_LB_CYCLE);
+        if (raw) {
+          const data = JSON.parse(raw);
+          if (data && data.cycleId === cycleInfo.cycleId && Array.isArray(data.entries)) {
+            return data.entries;
+          }
+          if (data && data.entries && data.entries.length > 0) {
+            archiveCycleWinners(data.entries, data.cycleId);
+          }
+        }
+      } catch (e) {}
+
+      const fresh = DEFAULT_LEADERBOARD.map(x => ({ ...x }));
+      saveLeaderboard(fresh);
+      return fresh;
+    }
+
+    function saveLeaderboard(lb) {
+      const cycleInfo = getContestCycleInfo();
+      try {
+        const payload = {
+          cycleId: cycleInfo.cycleId,
+          entries: lb,
+          lastUpdated: Date.now()
+        };
+        localStorage.setItem(STORAGE_KEY_LB_CYCLE, JSON.stringify(payload));
+      } catch (e) {}
+    }
+
+    function escapeHtml(str) {
+      if (!str) return '';
+      return str.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#039;");
+    }
+
+    function getSpeedBonus(item) {
+      const t = Math.max(10, Number(item.time) || 45);
+      return Math.max(0, Math.round((60 - t) * 1.5));
+    }
+
+    function getLeaderboardRating(item) {
+      const s = Number(item.score) || 0;
+      const speedBonus = getSpeedBonus(item);
+      return s + speedBonus;
+    }
+
+    function sortLeaderboard(lb) {
+      lb.sort((a, b) => {
+        const ratingA = getLeaderboardRating(a);
+        const ratingB = getLeaderboardRating(b);
+        if (ratingB !== ratingA) return ratingB - ratingA;
+        if ((Number(b.score) || 0) !== (Number(a.score) || 0)) return (Number(b.score) || 0) - (Number(a.score) || 0);
+        return (Number(a.time) || 999) - (Number(b.time) || 999);
+      });
+    }
+
+    // --- LEADERBOARD VIEWS & 60-DAY COOLDOWN ---
+    let currentLbTab = 'active';
+
+    function switchLbTab(tab) {
+      currentLbTab = tab;
+      const tabActiveBtn = document.getElementById('lbTabActive');
+      const tabWinnersBtn = document.getElementById('lbTabWinners');
+      if (tabActiveBtn && tabWinnersBtn) {
+        if (tab === 'active') {
+          tabActiveBtn.classList.add('active');
+          tabWinnersBtn.classList.remove('active');
+        } else {
+          tabActiveBtn.classList.remove('active');
+          tabWinnersBtn.classList.add('active');
+        }
+      }
+      renderLeaderboardView();
+    }
+
+    function renderLeaderboardView() {
+      const listEl = document.getElementById('leaderboardList');
+      if (!listEl) return;
+
+      if (currentLbTab === 'winners') {
+        const past = getPastWinners();
+        const now = Date.now();
+        if (!past || past.length === 0) {
+          listEl.innerHTML = `<div style="text-align:center;padding:24px 10px;color:#86efac;font-size:12px;">No past winners archived yet. Current cycle in progress!</div>`;
+          return;
+        }
+
+        listEl.innerHTML = past.map((item, idx) => {
+          const elapsed = now - (item.wonTimestamp || 0);
+          const isWithin60 = elapsed < SIXTY_DAYS_MS;
+          const daysLeft = Math.max(0, Math.ceil((SIXTY_DAYS_MS - elapsed) / (24 * 60 * 60 * 1000)));
+          const wonDate = item.wonTimestamp ? new Date(item.wonTimestamp).toLocaleDateString('en-IN', { day: 'numeric', month: 'short' }) : 'Recent';
+
+          return `<div class="lb-item">
+            <div class="lb-rank">🌳</div>
+            <div class="lb-info">
+              <div class="lb-name">${escapeHtml(item.name)} <span style="font-size:10px;opacity:0.75;">· ${escapeHtml(item.city || 'India')}</span></div>
+              <div class="lb-meta">
+                <span>Cycle: ${escapeHtml(item.wonCycleId || 'GAIL')} (${wonDate})</span>
+                <span>· ⚡ ${item.score || 0} pts</span>
+              </div>
+            </div>
+            <div class="lb-score-col">
+              ${isWithin60 ? `
+                <div class="lb-cooldown-badge">🔒 60d Cooldown (${daysLeft}d left)</div>
+              ` : `
+                <div style="background:rgba(34,197,94,0.2);border:1px solid #22c55e;color:#86efac;font-size:9px;font-weight:800;padding:1px 6px;border-radius:99px;">
+                  ✓ 60d Elapsed · Can Repeat
+                </div>
+              `}
+            </div>
+          </div>`;
+        }).join('');
+        return;
+      }
+
+      const lb = getLeaderboard();
+      sortLeaderboard(lb);
+
+      const now = Date.now();
+      let eligibleWinnerCount = 0;
+      const awardedUniqueKeys = new Set();
+
+      listEl.innerHTML = lb.map((item, idx) => {
+        const rank = idx + 1;
+        let rankBadge = `#${rank}`;
+        if (rank === 1) rankBadge = '🥇';
+        else if (rank === 2) rankBadge = '🥈';
+        else if (rank === 3) rankBadge = '🥉';
+
+        const rating = getLeaderboardRating(item);
+        const speedBonus = getSpeedBonus(item);
+
+        const pKey = (item.email || item.name || '').trim().toLowerCase();
+        const cooldownStatus = check60DayCooldown(item, now);
+
+        let isWinner = false;
+        let winnerLabel = '';
+
+        if (cooldownStatus.isCooldown) {
+          winnerLabel = `<span class="lb-cooldown-badge">🏅 Prev Winner (${cooldownStatus.daysLeft}d Cooldown)</span>`;
+        } else if (!awardedUniqueKeys.has(pKey) && eligibleWinnerCount < 5) {
+          isWinner = true;
+          eligibleWinnerCount++;
+          awardedUniqueKeys.add(pKey);
+          winnerLabel = `<span style="background:#22c55e;color:#052e16;font-size:9.5px;font-weight:800;padding:1px 6px;border-radius:999px;">🌱 Tree Winner</span>`;
+          if (rank > 3) rankBadge = '🌳';
+        } else if (awardedUniqueKeys.has(pKey)) {
+          winnerLabel = `<span style="font-size:9px;opacity:0.7;">(Duplicate player)</span>`;
+        }
+
+        return `<div class="lb-item ${isWinner ? 'top-five' : ''}">
+          <div class="lb-rank">${rankBadge}</div>
+          <div class="lb-info">
+            <div class="lb-name">${escapeHtml(item.name)} <span style="font-size:11px;opacity:0.75;">· ${escapeHtml(item.city || 'India')}</span></div>
+            <div class="lb-meta">
+              ${winnerLabel}
+              <span>⚡ ${item.score} pts</span>
+              <span>· ⏱️ ${item.time || 45}s</span>
+              ${speedBonus > 0 ? `<span class="lb-speed-tag">+${speedBonus} Speed</span>` : ''}
+            </div>
+          </div>
+          <div class="lb-score-col">
+            <div class="lb-score">${rating} ⭐</div>
+            <div class="lb-time">Rank Rating</div>
+          </div>
+        </div>`;
+      }).join('');
+    }
+
+    function updateAllContestTickers() {
+      const info = getContestCycleInfo();
+      const modalTickerEl = document.getElementById('modalCountdownTicker');
+      if (modalTickerEl) modalTickerEl.textContent = `⏱️ ${info.tickerText}`;
+
+      const modalCycleBadge = document.getElementById('modalCycleBadge');
+      if (modalCycleBadge) modalCycleBadge.textContent = info.periodLabel;
+    }
+
+    setInterval(updateAllContestTickers, 1000);
+
+    function openLeaderboard() {
+      const modal = document.getElementById('leaderboardModal');
+      updateAllContestTickers();
+      renderLeaderboardView();
+      modal.classList.add('open');
+    }
+
+    function closeLeaderboard() {
+      document.getElementById('leaderboardModal').classList.remove('open');
+    }
+
+    function submitScore() {
+      if (isSubmitted) return;
+      const nameInput = document.getElementById('playerName');
+      const cityInput = document.getElementById('playerCity');
+      const name = (nameInput ? nameInput.value.trim() : '') || 'Clean Champion';
+      const city = (cityInput ? cityInput.value.trim() : '') || 'India';
+
+      let userEmail = '';
+      try {
+        const storedUser = JSON.parse(sessionStorage.getItem('gail_sweety_user_data') || '{}');
+        userEmail = storedUser.email || '';
+      } catch(e) {}
+
+      const lb = getLeaderboard();
+      const newEntry = {
+        name: name,
+        email: userEmail,
+        city: city,
+        score: score,
+        time: totalTimeSec,
+        date: 'Just now',
+        timestamp: Date.now()
+      };
+
+      lb.push(newEntry);
+      sortLeaderboard(lb);
+      saveLeaderboard(lb);
+      isSubmitted = true;
+
+      // Discreetly record to Organizer Master Log
+      try {
+        const orgList = JSON.parse(localStorage.getItem(STORAGE_KEY_ORGANIZER_LOG) || '[]');
+        const cycleInfo = getContestCycleInfo();
+        const d = new Date();
+        const phaseName = cycleInfo.cycleId.endsWith('P1') ? 'Phase 1 (1st-10th)' : (cycleInfo.cycleId.endsWith('P2') ? 'Phase 2 (11th-20th)' : 'Phase 3 (21st-End)');
+        const orgItem = {
+          id: 'ENT-' + Date.now().toString(36).toUpperCase() + '-' + Math.floor(Math.random() * 900 + 100),
+          name: newEntry.name,
+          email: newEntry.email,
+          city: newEntry.city,
+          score: newEntry.score,
+          gameScore: score - (isBonusUnlocked ? 20 : 0),
+          ytBonus: isBonusUnlocked ? 20 : 0,
+          time: newEntry.time,
+          rating: getLeaderboardRating(newEntry),
+          cycleId: cycleInfo.cycleId,
+          phase: phaseName,
+          month: d.toLocaleDateString('en-IN', { month: 'long', year: 'numeric' }),
+          monthKey: `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}`,
+          timestamp: Date.now(),
+          dateStr: d.toLocaleString('en-IN')
+        };
+        const existingIdx = orgList.findIndex(x => (x.email && newEntry.email && x.email.toLowerCase() === newEntry.email.toLowerCase()) || (x.name && x.name.toLowerCase() === (newEntry.name || '').toLowerCase() && Date.now() - (x.timestamp || 0) < 600000));
+        if (existingIdx >= 0) {
+          orgList[existingIdx] = { ...orgList[existingIdx], ...orgItem, id: orgList[existingIdx].id };
+        } else {
+          orgList.unshift(orgItem);
+        }
+        localStorage.setItem(STORAGE_KEY_ORGANIZER_LOG, JSON.stringify(orgList));
+      } catch(e) {}
+
+      const userRank = lb.findIndex(x => x === newEntry) + 1;
+      const userRating = getLeaderboardRating(newEntry);
+      const userSpeedBonus = getSpeedBonus(newEntry);
+      const userCooldown = check60DayCooldown(newEntry);
+
+      if (userRank <= 5) {
+        if (userCooldown.isCooldown) {
+          toast(`🏅 Rank #${userRank} (${userRating} ⭐)! You have an active winner cooldown (${userCooldown.daysLeft}d left under 60-day rule).`);
+        } else {
+          toast(`🎉 Rank #${userRank}! Rating: ${userRating} ⭐ (Score: ${score} + Speed: +${userSpeedBonus}). You qualify for a Geotagged Tree! 🌳`);
+        }
+      } else {
+        toast(`Submitted! Your Rank is #${userRank} (${userRating} ⭐) ⚡`);
+      }
+
+      document.getElementById('lbSubmitFormWrap').innerHTML = `
+        <div style="padding:4px;color:#a3e635;font-weight:800;font-size:12.5px;">
+          ✅ Your score has been submitted to the Leaderboard!
+        </div>
+      `;
+
+      setTimeout(openLeaderboard, 600);
+    }
+
+    function loadImage(src) {
+      return new Promise((resolve) => {
+        const img = new Image();
+        img.onload = () => resolve(img);
+        img.onerror = () => resolve(null);
+        img.src = src;
+        if (img.complete) resolve(img);
+      });
+    }
+
+    function roundRect(ctx, x, y, width, height, radius, fill, stroke) {
+      if (typeof radius === 'undefined') radius = 5;
+      if (typeof radius === 'number') {
+        radius = Math.max(0, Math.min(radius, Math.abs(width) / 2, Math.abs(height) / 2));
+      }
+      if (ctx.roundRect) {
+        ctx.beginPath();
+        ctx.roundRect(x, y, width, height, radius);
+        if (fill) ctx.fill();
+        if (stroke) ctx.stroke();
+        return;
+      }
+      ctx.beginPath();
+      ctx.moveTo(x + radius, y);
+      ctx.lineTo(x + width - radius, y);
+      ctx.quadraticCurveTo(x + width, y, x + width, y + radius);
+      ctx.lineTo(x + width, y + height - radius);
+      ctx.quadraticCurveTo(x + width, y + height, x + width - radius, y + height);
+      ctx.lineTo(x + radius, y + height);
+      ctx.quadraticCurveTo(x, y + height, x, y + height - radius);
+      ctx.lineTo(x, y + radius);
+      ctx.quadraticCurveTo(x, y, x + radius, y);
+      ctx.closePath();
+      if (fill) ctx.fill();
+      if (stroke) ctx.stroke();
+    }
+
+    // High-Resolution Canvas Scorecard Generator - Exact Match to Card ("As It Is")
+    function generateScorecardCanvas(callback) {
+      const canvas = document.getElementById('scorecardCanvas');
+      const ctx = canvas.getContext('2d');
+      const W = 760;
+      const H = 550;
+      canvas.width = W;
+      canvas.height = H;
+
+      // 1. Card Background Gradient
+      const grad = ctx.createLinearGradient(0, 0, 0, H);
+      grad.addColorStop(0, '#031c0e');
+      grad.addColorStop(0.35, '#063519');
+      grad.addColorStop(0.7, '#042412');
+      grad.addColorStop(1, '#021208');
+      ctx.fillStyle = grad;
+      ctx.fillRect(0, 0, W, H);
+
+      // Radial Glow behind the score
+      const radGrad = ctx.createRadialGradient(W / 2, 135, 10, W / 2, 135, 260);
+      radGrad.addColorStop(0, 'rgba(34, 197, 94, 0.45)');
+      radGrad.addColorStop(1, 'rgba(0, 0, 0, 0)');
+      ctx.fillStyle = radGrad;
+      ctx.fillRect(0, 0, W, H);
+
+      // Sleek Glowing Card Border (Matching the User Screenshot)
+      ctx.strokeStyle = '#4ade8099';
+      ctx.lineWidth = 3;
+      roundRect(ctx, 12, 12, W - 24, H - 24, 28, false, true);
+
+      // Pre-load pipe logo
+      loadImage('logo_3d_clean_transparent.png').then((pipeLogoImg) => {
+        // 1. Header: ⚡ YOUR ENERGY SCORECARD
+        ctx.textAlign = 'center';
+        ctx.fillStyle = '#a3e635';
+        ctx.font = '800 15px -apple-system, BlinkMacSystemFont, "SF Pro Display", sans-serif';
+        ctx.fillText('⚡ YOUR ENERGY SCORECARD', W / 2, 54);
+
+        // 2. Score: Big Glowing Yellow with Lightning
+        ctx.fillStyle = '#facc15';
+        ctx.font = '900 88px -apple-system, BlinkMacSystemFont, "SF Pro Display", sans-serif';
+        ctx.shadowColor = 'rgba(250, 204, 21, 0.65)';
+        ctx.shadowBlur = 26;
+        ctx.fillText(`${score} ⚡`, W / 2, 146);
+        ctx.shadowBlur = 0;
+
+        // 3. Level Title
+        ctx.fillStyle = '#86efac';
+        ctx.font = 'bold 24px -apple-system, BlinkMacSystemFont, "SF Pro Display", sans-serif';
+        ctx.fillText(currentLevelTitle, W / 2, 192);
+
+        // 4. Unified Stats Bar
+        const barW = 680, barH = 64;
+        const barX = (W - barW) / 2;
+        const barY = 222;
+
+        ctx.fillStyle = 'rgba(4, 29, 16, 0.85)';
+        ctx.strokeStyle = 'rgba(34, 197, 94, 0.45)';
+        ctx.lineWidth = 1.5;
+        roundRect(ctx, barX, barY, barW, barH, 14, true, true);
+
+        // Vertical Separators
+        ctx.strokeStyle = 'rgba(255, 255, 255, 0.2)';
+        ctx.lineWidth = 1.5;
+        ctx.beginPath();
+        ctx.moveTo(barX + barW / 3, barY + 12);
+        ctx.lineTo(barX + barW / 3, barY + barH - 12);
+        ctx.moveTo(barX + (barW / 3) * 2, barY + 12);
+        ctx.lineTo(barX + (barW / 3) * 2, barY + barH - 12);
+        ctx.stroke();
+
+        // Stat Items
+        const colW = barW / 3;
+        const stats = [
+          { val: `⏱️ ${totalTimeSec}s`, label: 'TOTAL TIME' },
+          { val: `⚡ +${totalSpeedBonus}`, label: 'SPEED BONUS' },
+          { val: `🔥 ${maxStreak}`, label: 'STREAK' }
+        ];
+
+        stats.forEach((st, idx) => {
+          const cx = barX + idx * colW + colW / 2;
+          ctx.fillStyle = '#f0fdf4';
+          ctx.font = '800 20px -apple-system, BlinkMacSystemFont, "SF Pro Display", sans-serif';
+          ctx.fillText(st.val, cx, barY + 30);
+
+          ctx.fillStyle = '#a3e635';
+          ctx.font = '800 11px -apple-system, BlinkMacSystemFont, "SF Pro Display", sans-serif';
+          ctx.fillText(st.label, cx, barY + 49);
+        });
+
+        // 5. Badges Layout
+        const r1 = badges.slice(0, 3);
+        const r2 = badges.slice(3, 6);
+        const r3 = badges.slice(6);
+
+        function drawRow(row, yPos) {
+          if (!row || !row.length) return;
+          const bW = 200, bH = 36, bGap = 12;
+          const startX = (W - (row.length * bW + (row.length - 1) * bGap)) / 2;
+          row.forEach((text, bIdx) => {
+            const bx = startX + bIdx * (bW + bGap);
+            ctx.fillStyle = 'rgba(5, 46, 22, 0.9)';
+            ctx.strokeStyle = 'rgba(34, 197, 94, 0.45)';
+            ctx.lineWidth = 1.5;
+            roundRect(ctx, bx, yPos, bW, bH, 18, true, true);
+
+            ctx.fillStyle = '#dcfce7';
+            ctx.font = 'bold 14px -apple-system, BlinkMacSystemFont, "SF Pro Display", sans-serif';
+            ctx.fillText(text, bx + bW / 2, yPos + 23);
+          });
+        }
+
+        drawRow(r1, 308);
+        drawRow(r2, 354);
+        drawRow(r3, 400);
+
+        // 6. Centered #WahKyaENERGYHai 3D Pipe Logo
+        if (pipeLogoImg) {
+          const logoW = 230;
+          const logoAspect = pipeLogoImg.naturalHeight / (pipeLogoImg.naturalWidth || 1);
+          const logoH = logoW * logoAspect;
+          const logoY = H - logoH - 24;
+          ctx.drawImage(pipeLogoImg, (W - logoW) / 2, logoY, logoW, logoH);
+        }
+
+        if (callback) callback(canvas);
+      });
+    }
+
+    function downloadScorecard() {
+      toast('Generating Scorecard PNG...');
+      generateScorecardCanvas(function (canvas) {
+        try {
+          const dataUrl = canvas.toDataURL('image/png');
+          const link = document.createElement('a');
+          link.download = `WahKyaEnergy_Scorecard_${score}pts.png`;
+          link.href = dataUrl;
+          document.body.appendChild(link);
+          link.click();
+          document.body.removeChild(link);
+          toast('✅ Scorecard image downloaded!');
+        } catch (e) {
+          toast('Downloaded as image');
+        }
+      });
+    }
+
+    async function shareOnWhatsApp() {
+      const waText = `⚡ I scored *${score} Energy Points* on GAIL *#WahKyaENERGYHai* in *${totalTimeSec}s*! 🌿\n\n` +
+        `🏆 Level: ${currentLevelTitle}\n` +
+        `🔥 Clean Streak: ${maxStreak} in a row\n` +
+        `⚡ Speed Bonus: +${totalSpeedBonus}\n\n` +
+        `🌳 *CONTEST ALERT:* Every 10 days, the top 5 unique players on the Leaderboard win *Geotagged Trees* planted on their name!\n\n` +
+        `Can you beat my score and win a tree? Check out my scorecard & play here 👇\n` +
+        `https://gail-connect-d9e21.web.app/scorecard?score=${score}&time=${totalTimeSec}&speed=${totalSpeedBonus}&streak=${maxStreak}`;
+
+      toast('Preparing Score Image for WhatsApp...');
+
+      generateScorecardCanvas(async function (canvas) {
+        canvas.toBlob(async function (blob) {
+          if (blob) {
+            const file = new File([blob], `WahKyaEnergy_Scorecard_${score}pts.png`, { type: 'image/png' });
+
+            if (navigator.canShare && navigator.canShare({ files: [file] })) {
+              try {
+                await navigator.share({
+                  files: [file],
+                  title: 'Wah Kya Energy Hai! · GAIL Clean Energy Challenge',
+                  text: waText
+                });
+                toast('✅ Shared with Score Image!');
+                return;
+              } catch (err) {
+                if (err && err.name === 'AbortError') return;
+              }
+            }
+
+            try {
+              if (navigator.clipboard && window.ClipboardItem) {
+                await navigator.clipboard.write([
+                  new ClipboardItem({ 'image/png': blob })
+                ]);
+                toast('📋 Score image copied! Paste (Ctrl+V) in WhatsApp.');
+              }
+            } catch (clipErr) {}
+          }
+
+          downloadScorecard();
+
+          const waUrl = `https://api.whatsapp.com/send?text=${encodeURIComponent(waText)}`;
+          setTimeout(() => {
+            window.open(waUrl, '_blank');
+          }, 450);
+        }, 'image/png');
+      });
+    }
+
+    // Touch events for iOS active state
+    document.addEventListener('touchstart', function () { }, { passive: true });
+  </script>
+</body>
+
+</html>

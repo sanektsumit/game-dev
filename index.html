@@ -1,0 +1,3510 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
+  <title>Wah Kya Energy Hai! · GAIL Clean Energy Challenge & Sweety Ki Rasoi</title>
+
+  <!-- Open Graph / WhatsApp / Social Preview Meta Tags -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="GAIL #WahKyaENERGYHai" />
+  <meta property="og:title" content="⚡ Wah Kya Energy Hai! · GAIL Clean Energy Challenge & Sweety Ki Rasoi" />
+  <meta property="og:description"
+    content="Play GAIL Clean Choice Challenge, watch Sweety Ki Rasoi, unlock +20 bonus energy points & win Geotagged Trees! Jodo Pipeline. Jagao Shehar." />
+  <meta property="og:image" content="https://gail-connect-d9e21.web.app/campaign_banner.png?v=2" />
+  <meta property="og:image:secure_url" content="https://gail-connect-d9e21.web.app/campaign_banner.png?v=2" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="GAIL #WahKyaEnergyHai · Sweety Ki Rasoi Clean Energy Challenge" />
+  <meta property="og:url" content="https://gail-connect-d9e21.web.app" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="⚡ Wah Kya Energy Hai! · GAIL Clean Energy Challenge" />
+  <meta name="twitter:description"
+    content="Play GAIL Clean Choice Challenge, watch Sweety Ki Rasoi, and unlock +20 bonus points!" />
+  <meta name="twitter:image" content="https://gail-connect-d9e21.web.app/campaign_banner.png?v=2" />
+
+  <!-- Apple iOS / Safari Compatibility Meta Tags -->
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Wah Kya Energy" />
+  <meta name="format-detection" content="telephone=no, date=no, address=no, email=no" />
+  <link rel="apple-touch-icon" href="gail_logo.png" />
+
+  <!-- Google Font: Poppins -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,600;1,700&display=swap"
+    rel="stylesheet" />
+
+  <!-- YouTube IFrame API & Google Platform -->
+  <script src="https://www.youtube.com/iframe_api"></script>
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
+  <!-- Lightweight Confetti -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+
+  <style>
+    :root {
+      --g: #22c55e;
+      --lime: #a3e635;
+      --y: #facc15;
+      --gold: #fbbf24;
+      --bg: #050d0a;
+      --t: #f0fdf4;
+      --gail-yellow: #F4D03F;
+      --gail-gold: #E8B923;
+      --gail-green: #1A7A3A;
+      --gail-green-dark: #176B32;
+      --gail-deep-green: #0E2A16;
+      --gail-red: #C1121F;
+      /* iOS Safe Area Insets (Notch, Dynamic Island, Home Bar) */
+      --sat: env(safe-area-inset-top, 0px);
+      --sab: env(safe-area-inset-bottom, 0px);
+      --sal: env(safe-area-inset-left, 0px);
+      --sar: env(safe-area-inset-right, 0px);
+    }
+
+    * {
+      box-sizing: border-box;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    html {
+      height: 100%;
+      height: -webkit-fill-available;
+    }
+
+    body {
+      margin: 0;
+      height: 100%;
+      min-height: 100vh;
+      min-height: -webkit-fill-available;
+      min-height: 100dvh;
+      background: #000;
+      font-family: 'Poppins', -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", system-ui, Roboto, sans-serif;
+      color: var(--t);
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    .phone {
+      max-width: 480px;
+      min-height: 100vh;
+      min-height: -webkit-fill-available;
+      min-height: 100dvh;
+      margin: 0 auto;
+      position: relative;
+      background: radial-gradient(ellipse at 50% 20%, #14532d 0%, var(--bg) 55%);
+      overflow: hidden;
+      -webkit-transform: translateZ(0);
+      transform: translateZ(0);
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* IG story progress bars - notch & Dynamic Island safe */
+    .bars {
+      display: flex;
+      gap: 3px;
+      padding: calc(var(--sat) + 8px) 10px 0;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 30;
+    }
+
+    .bars i {
+      flex: 1;
+      height: 3px;
+      background: #ffffff33;
+      border-radius: 99px;
+      overflow: hidden;
+      -webkit-transform: translateZ(0);
+      transform: translateZ(0);
+    }
+
+    .bars i b {
+      display: block;
+      height: 100%;
+      width: 0;
+      background: #fff;
+      border-radius: 99px;
+    }
+
+    .bars i.done b {
+      width: 100%;
+    }
+
+    .bars i.active b {
+      animation: fill linear forwards;
+      -webkit-animation: fill linear forwards;
+    }
+
+    @keyframes fill {
+      from {
+        width: 0;
+      }
+
+      to {
+        width: 100%;
+      }
+    }
+
+    @-webkit-keyframes fill {
+      from {
+        width: 0;
+      }
+
+      to {
+        width: 100%;
+      }
+    }
+
+    /* Top bar - notch & Dynamic Island safe */
+    .top {
+      position: absolute;
+      top: calc(var(--sat) + 16px);
+      left: max(12px, var(--sal));
+      right: max(12px, var(--sar));
+      z-index: 31;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      height: 44px;
+      background: rgba(5, 13, 10, 0.65);
+      backdrop-filter: blur(8px);
+      padding: 0 10px;
+      border-radius: 22px;
+      border: 1px solid rgba(34, 197, 94, 0.2);
+    }
+
+    .avatar {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: #FFFFFF;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 2px solid var(--gold);
+      flex-shrink: 0;
+      overflow: hidden;
+      padding: 1px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
+    }
+
+    .avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      border-radius: 50%;
+      display: block;
+    }
+
+    .top-badge {
+      background: rgba(34, 197, 94, 0.2);
+      color: var(--lime);
+      border: 1px solid rgba(34, 197, 94, 0.35);
+      font-size: 10.5px;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 12px;
+      white-space: nowrap;
+    }
+
+    .who {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .who strong {
+      display: block;
+      font-size: 12px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      color: #FFFFFF;
+      letter-spacing: 0.2px;
+    }
+
+    .who span {
+      font-size: 10.5px;
+      color: var(--lime);
+    }
+
+    .gail-logo-badge {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      cursor: pointer;
+    }
+
+    .gail-logo-badge img {
+      height: 28px;
+      width: auto;
+      max-width: 48px;
+      object-fit: contain;
+      filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.45));
+      transition: transform .2s ease;
+      display: block;
+      -webkit-user-drag: none;
+    }
+
+    /* Slides with safe areas top & bottom */
+    .slide {
+      position: absolute;
+      inset: 0;
+      padding: calc(var(--sat) + 68px) 16px calc(var(--sab) + 16px);
+      display: none;
+      flex-direction: column;
+      justify-content: flex-end;
+      gap: 10px;
+      -webkit-transform: translateZ(0);
+      transform: translateZ(0);
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .slide.on {
+      display: flex;
+      animation: pop .28s ease;
+      -webkit-animation: pop .28s ease;
+    }
+
+    @keyframes pop {
+      from {
+        opacity: .4;
+        transform: scale(1.02);
+      }
+
+      to {
+        opacity: 1;
+        transform: none;
+      }
+    }
+
+    @-webkit-keyframes pop {
+      from {
+        opacity: .4;
+        -webkit-transform: scale(1.02);
+      }
+
+      to {
+        opacity: 1;
+        -webkit-transform: none;
+      }
+    }
+
+    .emoji {
+      font-size: 46px;
+      filter: drop-shadow(0 8px 20px #22c55e66);
+    }
+
+    .kicker {
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .12em;
+      color: var(--lime);
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 25px;
+      line-height: 1.15;
+      text-shadow: 0 2px 16px #000a;
+    }
+
+    .sub {
+      margin: 0;
+      color: #bbf7d0;
+      font-size: 13.5px;
+      line-height: 1.35;
+    }
+
+    /* Centered Start Page */
+    .slide.intro-slide {
+      justify-content: space-between;
+      align-items: center;
+      text-align: center;
+      padding: calc(var(--sat) + 68px) 16px calc(var(--sab) + 16px);
+      gap: 10px;
+    }
+
+    .intro-top-meta {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+      margin-top: 2px;
+    }
+
+    .intro-center {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      margin: auto 0;
+      gap: 12px;
+    }
+
+    .intro-logo-card {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      max-width: 360px;
+      padding: 4px;
+      filter: drop-shadow(0 14px 30px rgba(0, 0, 0, 0.7)) drop-shadow(0 0 20px rgba(34, 197, 94, 0.3));
+      animation: floatLogo 3.5s ease-in-out infinite alternate;
+      -webkit-animation: floatLogo 3.5s ease-in-out infinite alternate;
+    }
+
+    @keyframes floatLogo {
+      0% {
+        transform: translateY(0px);
+      }
+
+      100% {
+        transform: translateY(-6px) scale(1.015);
+      }
+    }
+
+    @-webkit-keyframes floatLogo {
+      0% {
+        -webkit-transform: translateY(0px) scale(1);
+      }
+
+      100% {
+        -webkit-transform: translateY(-6px) scale(1.015);
+      }
+    }
+
+    .intro-logo {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: contain;
+      -webkit-user-drag: none;
+    }
+
+    /* Tree Contest Announcement Banner */
+    .contest-banner {
+      background: linear-gradient(135deg, rgba(20, 83, 45, 0.85), rgba(6, 78, 59, 0.9));
+      border: 1.5px solid #4ade80;
+      border-radius: 16px;
+      padding: 10px 12px;
+      text-align: center;
+      width: 100%;
+      max-width: 390px;
+      cursor: pointer;
+      box-shadow: 0 4px 18px rgba(34, 197, 94, 0.25);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      -webkit-backdrop-filter: blur(10px);
+      backdrop-filter: blur(10px);
+    }
+
+    .contest-banner:active {
+      transform: scale(0.98);
+    }
+
+    .contest-header-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 6px;
+      margin-bottom: 4px;
+    }
+
+    .contest-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      background: #22c55e;
+      color: #052e16;
+      font-size: 10px;
+      font-weight: 900;
+      padding: 3px 8px;
+      border-radius: 999px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .cycle-pill {
+      background: rgba(250, 204, 21, 0.2);
+      border: 1px solid rgba(250, 204, 21, 0.5);
+      color: #fef08a;
+      font-size: 9.5px;
+      font-weight: 800;
+      padding: 2px 8px;
+      border-radius: 99px;
+      letter-spacing: 0.3px;
+    }
+
+    .contest-ticker-box {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+      background: rgba(0, 0, 0, 0.45);
+      border: 1.5px solid #facc15;
+      border-radius: 99px;
+      padding: 5px 12px;
+      margin: 6px 0;
+      box-shadow: 0 0 12px rgba(250, 204, 21, 0.25);
+    }
+
+    .ticker-live-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #22c55e;
+      box-shadow: 0 0 8px #22c55e;
+      animation: pulseLive 1.4s infinite;
+      flex-shrink: 0;
+    }
+
+    @keyframes pulseLive {
+
+      0%,
+      100% {
+        transform: scale(1);
+        opacity: 1;
+      }
+
+      50% {
+        transform: scale(1.35);
+        opacity: 0.5;
+      }
+    }
+
+    .ticker-time-text {
+      font-size: 12px;
+      font-weight: 800;
+      color: #fef08a;
+      letter-spacing: 0.2px;
+    }
+
+    .contest-text {
+      font-size: 11.5px;
+      line-height: 1.35;
+      color: #ecfdf5;
+      font-weight: 500;
+    }
+
+    .contest-text strong {
+      color: #facc15;
+      font-weight: 800;
+    }
+
+    .contest-sublink {
+      font-size: 11px;
+      color: #a3e635;
+      font-weight: 700;
+      margin-top: 5px;
+      text-decoration: underline;
+    }
+
+    .intro-bottom {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    /* CTA buttons */
+    .cta {
+      background: linear-gradient(135deg, var(--lime), var(--g));
+      color: #052e16;
+      border: none;
+      padding: 14px 18px;
+      border-radius: 14px;
+      font-size: 15px;
+      font-weight: 800;
+      cursor: pointer;
+      width: 100%;
+      box-shadow: 0 10px 25px #22c55e44;
+      transition: transform .1s ease, box-shadow .1s ease;
+      font-family: inherit;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
+
+    .cta:active {
+      transform: scale(.98);
+      box-shadow: 0 4px 12px #22c55e33;
+    }
+
+    .ghost {
+      background: rgba(255, 255, 255, 0.08);
+      color: #fff;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      padding: 10px 14px;
+      border-radius: 12px;
+      font-size: 12px;
+      font-weight: 700;
+      cursor: pointer;
+      width: 100%;
+      font-family: inherit;
+      transition: background .15s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
+
+    .ghost:active {
+      background: rgba(255, 255, 255, 0.15);
+    }
+
+
+    /* Choice buttons for questions */
+    .choice {
+      background: #022c16bb;
+      color: #fff;
+      border: 1.5px solid #22c55e44;
+      padding: 14px 16px;
+      border-radius: 16px;
+      font-size: 15px;
+      font-weight: 600;
+      text-align: left;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      transition: transform .15s ease, border-color .15s ease, background .15s ease;
+      font-family: inherit;
+    }
+
+    .choice:active {
+      transform: scale(.98);
+      border-color: var(--lime);
+    }
+
+    .choice.good.revealed {
+      border-color: #22c55e !important;
+      background: #14532dbb !important;
+      box-shadow: 0 0 16px #22c55e55;
+    }
+
+    .choice.bad.revealed {
+      border-color: #ef4444 !important;
+      background: #7f1d1dbb !important;
+      box-shadow: 0 0 16px #ef444455;
+    }
+
+    .choice.selected {
+      transform: scale(1.02);
+    }
+
+    .choice .pts {
+      margin-left: auto;
+      font-weight: 800;
+      color: var(--lime);
+      font-size: 13px;
+    }
+
+    /* HUD */
+    .hud {
+      position: absolute;
+      top: calc(var(--sat) + 66px);
+      right: max(16px, var(--sar));
+      z-index: 25;
+      text-align: right;
+      font-variant-numeric: tabular-nums;
+      pointer-events: none;
+    }
+
+    .hud small {
+      display: block;
+      font-size: 10px;
+      letter-spacing: .1em;
+      opacity: .8;
+      color: var(--lime);
+      text-transform: uppercase;
+    }
+
+    .hud b {
+      font-size: 24px;
+      color: var(--y);
+      line-height: 1;
+    }
+
+    .hud-time {
+      display: inline-block;
+      margin-left: 6px;
+      font-size: 11px;
+      color: #fff;
+      background: rgba(0, 0, 0, 0.4);
+      padding: 2px 6px;
+      border-radius: 6px;
+    }
+
+    /* Toast */
+    .toast {
+      position: absolute;
+      top: calc(var(--sat) + 72px);
+      left: 50%;
+      transform: translateX(-50%) translateY(-10px);
+      background: #22c55ecc;
+      color: #052e16;
+      padding: 8px 16px;
+      border-radius: 99px;
+      font-weight: 800;
+      font-size: 13px;
+      z-index: 40;
+      pointer-events: none;
+      opacity: 0;
+      transition: all .2s ease;
+      backdrop-filter: blur(8px);
+      box-shadow: 0 8px 24px #0008;
+      white-space: nowrap;
+    }
+
+    .toast.show {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+
+    .toast.bad {
+      background: #ef4444cc;
+      color: #fff;
+    }
+
+    /* ================================================= */
+    /* SWEETY KI RASOI GATE SLIDE (SCENE 11)              */
+    /* ================================================= */
+    .slide.sweety-gate-slide {
+      padding: calc(var(--sat) + 68px) 12px calc(var(--sab) + 16px);
+      justify-content: flex-start;
+      gap: 14px;
+      background: linear-gradient(170deg, #061f10 0%, #0d381c 40%, #05140b 100%);
+    }
+
+    /* HERO SPLIT (Official Thumbnail Replica) */
+    .hero-split-gate {
+      position: relative;
+      width: 100%;
+      border-radius: 18px;
+      overflow: hidden;
+      display: flex;
+      min-height: 170px;
+      background: #000;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+      border: 1px solid rgba(244, 208, 63, 0.35);
+      flex-shrink: 0;
+    }
+
+    .hero-split-left {
+      flex: 1.15;
+      background: linear-gradient(135deg, #F9E779 0%, var(--gail-yellow) 40%, var(--gail-gold) 100%);
+      padding: 16px 12px 16px 16px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-split-left::after {
+      content: '';
+      position: absolute;
+      top: -20px;
+      right: -16px;
+      width: 32px;
+      height: calc(100% + 40px);
+      background: inherit;
+      transform: skewX(-14deg);
+      z-index: 2;
+      box-shadow: 6px 0 14px rgba(0, 0, 0, 0.2);
+    }
+
+    .hero-split-right {
+      flex: 0.85;
+      background: linear-gradient(145deg, var(--gail-green) 0%, var(--gail-green-dark) 60%, var(--gail-deep-green) 100%);
+      padding: 14px 12px 14px 18px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      position: relative;
+      z-index: 1;
+      color: #FFFFFF;
+    }
+
+    .badge-pill-ep {
+      background: rgba(14, 42, 22, 0.94);
+      color: #FFFFFF;
+      font-size: 9.5px;
+      font-weight: 800;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      padding: 3px 8px;
+      border-radius: 20px;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      display: inline-block;
+      margin-bottom: 6px;
+      position: relative;
+      z-index: 3;
+    }
+
+    .hero-title-prefix {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--gail-deep-green);
+      line-height: 1.1;
+      position: relative;
+      z-index: 3;
+    }
+
+    .hero-title-main {
+      font-size: 24px;
+      font-weight: 900;
+      color: var(--gail-red);
+      line-height: 1.05;
+      letter-spacing: -0.5px;
+      text-transform: uppercase;
+      text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.7);
+      margin: 2px 0 4px;
+      position: relative;
+      z-index: 3;
+    }
+
+    .hero-title-sub {
+      font-size: 10.5px;
+      font-weight: 600;
+      color: #374151;
+      line-height: 1.25;
+      position: relative;
+      z-index: 3;
+    }
+
+    .hero-views-badge {
+      background: rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(6px);
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      color: #FFFFFF;
+      font-size: 10px;
+      font-weight: 800;
+      padding: 4px 8px;
+      border-radius: 16px;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      margin-bottom: 8px;
+    }
+
+    .hero-views-badge svg {
+      width: 12px;
+      height: 12px;
+      fill: var(--gail-yellow);
+    }
+
+    .hero-right-quote {
+      font-size: 12.5px;
+      font-weight: 800;
+      line-height: 1.3;
+      color: #FEF3C7;
+      margin-bottom: 4px;
+    }
+
+    .hero-right-subquote {
+      font-size: 10px;
+      color: #A7F3D0;
+      line-height: 1.35;
+    }
+
+    /* GATE INTRO COPY */
+    .gate-copy-banner {
+      background: rgba(14, 42, 22, 0.85);
+      border: 1.5px solid rgba(244, 208, 63, 0.35);
+      border-left: 4px solid var(--gail-yellow);
+      padding: 12px 14px;
+      border-radius: 14px;
+      color: #ECFDF5;
+    }
+
+    .gate-copy-headline {
+      font-size: 13px;
+      font-weight: 600;
+      line-height: 1.45;
+      color: #FFFFFF;
+    }
+
+    .gate-score-pill-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 8px;
+      flex-wrap: wrap;
+    }
+
+    .score-chip-preview {
+      font-size: 11.5px;
+      font-weight: 700;
+      padding: 3px 9px;
+      border-radius: 12px;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .score-chip-base {
+      background: rgba(255, 255, 255, 0.15);
+      color: #fff;
+    }
+
+    .score-chip-bonus {
+      background: #FEF3C7;
+      color: #92400E;
+    }
+
+    .score-chip-bonus.unlocked {
+      background: #DCFCE7;
+      color: #166534;
+      border: 1px solid #22c55e;
+      animation: pulseHighlight 2s infinite;
+    }
+
+    /* BONUS CARD (YOUTUBE EMBED + 20s REAL WATCH TIME TRACKER) */
+    .bonus-card-box {
+      background: #FFFFFF;
+      color: #1F2937;
+      border-radius: 18px;
+      padding: 14px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+      border: 2px solid rgba(244, 208, 63, 0.5);
+    }
+
+    .bonus-card-box.bonus-verified-box {
+      border-color: #22c55e;
+      box-shadow: 0 8px 24px rgba(34, 197, 94, 0.25);
+    }
+
+    .bonus-card-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      margin-bottom: 6px;
+    }
+
+    .bonus-card-title-group {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .bonus-spark-icon {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: var(--gail-yellow);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      flex-shrink: 0;
+    }
+
+    .bonus-card-title {
+      font-size: 13.5px;
+      font-weight: 800;
+      color: var(--gail-deep-green);
+      line-height: 1.2;
+    }
+
+    .bonus-unlock-status-pill {
+      font-size: 10.5px;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      white-space: nowrap;
+    }
+
+    .status-locked {
+      background: #FEE2E2;
+      color: #991B1B;
+    }
+
+    .status-unlocked {
+      background: #DCFCE7;
+      color: #166534;
+      border: 1px solid #22C55E;
+    }
+
+    .bonus-card-helper {
+      font-size: 11.5px;
+      color: #4B5563;
+      line-height: 1.4;
+      margin-bottom: 10px;
+    }
+
+    /* 16:9 Video Wrapper */
+    .video-wrapper-16-9 {
+      position: relative;
+      width: 100%;
+      padding-top: 56.25%;
+      border-radius: 12px;
+      overflow: hidden;
+      background: #000;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+    }
+
+    .video-wrapper-16-9 iframe,
+    .video-wrapper-16-9 #ytPlayer {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    /* Live Watch Tracker Box */
+    .watch-status-box {
+      margin-top: 10px;
+      background: #F9FAFB;
+      border: 1px solid #E5E7EB;
+      border-radius: 12px;
+      padding: 10px 12px;
+    }
+
+    .watch-status-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 6px;
+    }
+
+    .watch-time-label {
+      font-size: 12px;
+      font-weight: 700;
+      color: #1F2937;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .watch-state-pill {
+      font-size: 10.5px;
+      font-weight: 600;
+      padding: 2px 7px;
+      border-radius: 8px;
+      background: #E5E7EB;
+      color: #4B5563;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .watch-state-pill.playing {
+      background: #DCFCE7;
+      color: #166534;
+      animation: pulseGreen 1.5s infinite;
+    }
+
+    .watch-state-pill.paused {
+      background: #FEF3C7;
+      color: #92400E;
+    }
+
+    .watch-progress-track {
+      width: 100%;
+      height: 8px;
+      background: #E5E7EB;
+      border-radius: 8px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .watch-progress-fill {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, var(--gail-yellow) 0%, var(--gail-gold) 50%, var(--gail-green) 100%);
+      border-radius: 8px;
+      transition: width 0.35s ease;
+    }
+
+    .watch-progress-fill.completed {
+      background: linear-gradient(90deg, #22C55E 0%, #16A34A 100%);
+    }
+
+    .watch-success-alert {
+      display: none;
+      margin-top: 8px;
+      background: #ECFDF5;
+      border: 1px solid #10B981;
+      color: #065F46;
+      font-size: 11.5px;
+      font-weight: 700;
+      padding: 8px 10px;
+      border-radius: 8px;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .test-helper-bar {
+      margin-top: 8px;
+      font-size: 10px;
+      color: #9CA3AF;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    /* Subscribe Widget Row */
+    .yt-subscribe-wrapper {
+      margin-top: 10px;
+      padding-top: 10px;
+      border-top: 1px dashed rgba(26, 122, 58, 0.2);
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+
+    .sub-brand-col {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+    }
+
+    .sub-avatar {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 1.5px solid var(--gail-gold);
+      flex-shrink: 0;
+    }
+
+    .sub-avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .sub-channel-meta {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .sub-channel-name {
+      font-size: 11.5px;
+      font-weight: 700;
+      color: #1F2937;
+      line-height: 1.15;
+    }
+
+    .sub-channel-handle {
+      font-size: 9.5px;
+      color: #6B7280;
+    }
+
+    .btn-yt-subscribe {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #CC0000;
+      color: #FFFFFF !important;
+      font-size: 11.5px;
+      font-weight: 700;
+      letter-spacing: 0.2px;
+      padding: 6px 14px;
+      border-radius: 20px;
+      text-decoration: none;
+      box-shadow: 0 2px 8px rgba(204, 0, 0, 0.35);
+      transition: all 0.2s ease;
+      cursor: pointer;
+      font-family: inherit;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .btn-yt-subscribe:hover {
+      background: #E60000;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(230, 0, 0, 0.45);
+    }
+
+    .btn-yt-subscribe:active {
+      transform: scale(0.96);
+    }
+
+    .btn-yt-subscribe.subscribed {
+      background: #15803D;
+      box-shadow: 0 2px 8px rgba(21, 128, 61, 0.3);
+    }
+
+    .yt-icon {
+      width: 15px;
+      height: 15px;
+      fill: #FFFFFF;
+      flex-shrink: 0;
+    }
+
+    .playlist-ref-link {
+      width: 100%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 4px;
+      font-size: 10.5px;
+      font-weight: 600;
+      color: var(--gail-green);
+      text-decoration: none;
+      margin-top: 2px;
+    }
+
+    /* LEAD CAPTURE FORM */
+    .lead-form-box {
+      background: #FFFFFF;
+      color: #1F2937;
+      border-radius: 18px;
+      padding: 16px 14px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+    }
+
+    .form-title-row {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 12px;
+    }
+
+    .form-title-icon {
+      width: 22px;
+      height: 22px;
+      border-radius: 6px;
+      background: var(--gail-green);
+      color: #FFFFFF;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+    }
+
+    .form-title {
+      font-size: 14px;
+      font-weight: 800;
+      color: var(--gail-deep-green);
+    }
+
+    .form-fields-group {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .input-field-wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .field-label {
+      font-size: 11.5px;
+      font-weight: 600;
+      color: #374151;
+      display: flex;
+      align-items: center;
+      gap: 3px;
+    }
+
+    .required-star {
+      color: var(--gail-red);
+      font-weight: 700;
+    }
+
+    .field-input {
+      width: 100%;
+      height: 44px;
+      padding: 0 12px;
+      border: 1.5px solid #D1D5DB;
+      border-radius: 12px;
+      font-size: 13.5px;
+      font-family: inherit;
+      color: #111827;
+      background: #F9FAFB;
+      transition: all 0.2s ease;
+      outline: none;
+    }
+
+    .field-input:focus {
+      background: #FFFFFF;
+      border-color: var(--gail-green);
+      box-shadow: 0 0 0 3px rgba(26, 122, 58, 0.15);
+    }
+
+    .field-input.invalid {
+      border-color: var(--gail-red);
+      background: #FFF5F5;
+    }
+
+    .field-error-msg {
+      font-size: 10.5px;
+      color: var(--gail-red);
+      font-weight: 500;
+      display: none;
+    }
+
+    .privacy-disclaimer {
+      margin-top: 12px;
+      font-size: 10.5px;
+      color: #6B7280;
+      line-height: 1.45;
+      background: #F9FAFB;
+      padding: 9px 11px;
+      border-radius: 8px;
+      border: 1px solid #E5E7EB;
+    }
+
+    .btn-submit-lead {
+      width: 100%;
+      height: 48px;
+      margin-top: 14px;
+      background: linear-gradient(135deg, var(--gail-green) 0%, var(--gail-green-dark) 100%);
+      color: #FFFFFF;
+      border: none;
+      border-radius: 12px;
+      font-size: 15px;
+      font-weight: 800;
+      font-family: inherit;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      cursor: pointer;
+      box-shadow: 0 6px 18px rgba(26, 122, 58, 0.35);
+      transition: all 0.2s ease;
+    }
+
+    .btn-submit-lead:active {
+      transform: scale(0.98);
+    }
+
+    /* ================================================= */
+    /* RESULT SLIDE (SCENE 12)                           */
+    /* ================================================= */
+    .slide.result-slide-v2 {
+      padding: calc(var(--sat) + 68px) 12px calc(var(--sab) + 16px);
+      justify-content: flex-start;
+      gap: 12px;
+      background: linear-gradient(170deg, #031c0e 0%, #063519 35%, #021208 100%);
+    }
+
+    .result-hero-box {
+      background: rgba(2, 36, 18, 0.85);
+      border: 1.5px solid #4ade8099;
+      border-radius: 20px;
+      padding: 18px 14px;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 25px rgba(34, 197, 94, 0.2);
+      position: relative;
+    }
+
+    .result-hero-box::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--gail-yellow), var(--gail-gold), var(--g));
+      border-radius: 20px 20px 0 0;
+    }
+
+    .res-salute {
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      color: var(--lime);
+    }
+
+    .res-user-name {
+      font-size: 22px;
+      font-weight: 900;
+      color: #FFFFFF;
+      margin: 2px 0;
+      word-break: break-word;
+    }
+
+    .res-user-city {
+      font-size: 12px;
+      color: #A7F3D0;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      margin-bottom: 12px;
+    }
+
+    .res-score-number {
+      font-size: 56px;
+      font-weight: 900;
+      line-height: 1;
+      color: var(--y);
+      text-shadow: 0 0 25px rgba(250, 204, 21, 0.6);
+      letter-spacing: -1px;
+    }
+
+    .res-score-denom {
+      font-size: 11px;
+      font-weight: 700;
+      color: #A7F3D0;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 10px;
+    }
+
+    .res-chips-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 6px;
+      margin-bottom: 14px;
+    }
+
+    .res-chip {
+      font-size: 12px;
+      font-weight: 800;
+      padding: 5px 12px;
+      border-radius: 20px;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .res-chip-base {
+      background: rgba(34, 197, 94, 0.2);
+      color: #86EFAC;
+      border: 1px solid rgba(34, 197, 94, 0.4);
+    }
+
+    .res-chip-yt {
+      background: linear-gradient(135deg, #FEF3C7 0%, #FDE68A 100%);
+      color: #92400E;
+      border: 1px solid #F59E0B;
+      animation: pulseHighlight 2s infinite;
+    }
+
+    /* OFFICIAL TAGLINE BANNER */
+    .result-tagline-box {
+      background: linear-gradient(135deg, #0e2a16 0%, #176b32 100%);
+      border: 1.5px solid rgba(244, 208, 63, 0.4);
+      border-radius: 14px;
+      padding: 12px;
+      text-align: center;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+    }
+
+    .tagline-hindi-text {
+      font-size: 18px;
+      font-weight: 900;
+      color: var(--gail-yellow);
+      letter-spacing: 0.4px;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+    }
+
+    .tagline-sub-text {
+      font-size: 10.5px;
+      color: #D1FAE5;
+      margin-top: 2px;
+    }
+
+    /* Game Performance Breakdown Bar */
+    .perf-metrics-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      background: rgba(4, 29, 16, 0.85);
+      border: 1px solid rgba(34, 197, 94, 0.35);
+      border-radius: 14px;
+      padding: 9px 12px;
+      margin: 10px 0 12px;
+    }
+
+    .perf-metric-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .perf-metric-val {
+      font-size: 13.5px;
+      font-weight: 800;
+      color: #fff;
+    }
+
+    .perf-metric-label {
+      font-size: 9.5px;
+      color: var(--lime);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-top: 2px;
+    }
+
+    .perf-metric-sep {
+      width: 1px;
+      height: 24px;
+      background: rgba(34, 197, 94, 0.35);
+    }
+
+    /* Action Grid on Result */
+    .action-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      width: 100%;
+    }
+
+    .action-btn-hero {
+      background: #25D366;
+      color: #FFFFFF;
+      border: none;
+      padding: 14px 16px;
+      border-radius: 14px;
+      font-size: 14.5px;
+      font-weight: 800;
+      cursor: pointer;
+      box-shadow: 0 6px 18px rgba(37, 211, 102, 0.35);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      text-decoration: none;
+      font-family: inherit;
+    }
+
+    .action-btn-secondary {
+      background: rgba(255, 255, 255, 0.1);
+      color: #FFFFFF;
+      border: 1.5px solid rgba(255, 255, 255, 0.25);
+      padding: 11px 14px;
+      border-radius: 12px;
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      font-family: inherit;
+    }
+
+    /* Modal Backdrop for Leaderboard */
+    .modal-backdrop {
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.85);
+      z-index: 50;
+      display: none;
+      flex-direction: column;
+      padding: calc(var(--sat) + 20px) 16px calc(var(--sab) + 20px);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      animation: fadeIn .2s ease;
+    }
+
+    .modal-backdrop.open {
+      display: flex;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    .modal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+      padding-bottom: 8px;
+    }
+
+    .modal-title {
+      font-size: 16px;
+      font-weight: 800;
+      color: var(--y);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .modal-close {
+      background: rgba(255, 255, 255, 0.15);
+      border: none;
+      color: #fff;
+      font-size: 16px;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: grid;
+      place-items: center;
+    }
+
+    .lb-ticker-card {
+      background: linear-gradient(135deg, rgba(20, 83, 45, 0.9), rgba(6, 78, 59, 0.95));
+      border: 1.5px solid #4ade8099;
+      border-radius: 14px;
+      padding: 9px 12px;
+      margin-bottom: 8px;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+    }
+
+    .lb-ticker-card-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 6px;
+      margin-bottom: 5px;
+    }
+
+    .lb-cycle-badge {
+      background: #22c55e;
+      color: #052e16;
+      font-size: 9.5px;
+      font-weight: 900;
+      padding: 2px 7px;
+      border-radius: 99px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .lb-countdown-pill {
+      font-size: 11.5px;
+      font-weight: 800;
+      color: #fef08a;
+      background: rgba(0, 0, 0, 0.4);
+      border: 1px solid rgba(250, 204, 21, 0.6);
+      padding: 2px 9px;
+      border-radius: 99px;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .lb-schedule-note {
+      font-size: 11px;
+      line-height: 1.35;
+      color: #dcfce7;
+    }
+
+    .lb-schedule-note strong {
+      color: #facc15;
+    }
+
+    .lb-tabs-row {
+      display: flex;
+      gap: 6px;
+      margin-bottom: 8px;
+    }
+
+    .lb-tab-btn {
+      flex: 1;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: #ecfdf5;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 6px 4px;
+      border-radius: 8px;
+      cursor: pointer;
+      text-align: center;
+      font-family: inherit;
+      transition: all 0.2s ease;
+    }
+
+    .lb-tab-btn.active {
+      background: #22c55e;
+      color: #052e16;
+      border-color: #22c55e;
+      font-weight: 800;
+      box-shadow: 0 2px 8px rgba(34, 197, 94, 0.35);
+    }
+
+    .lb-cooldown-badge {
+      background: rgba(245, 158, 11, 0.2);
+      border: 1px solid #f59e0b;
+      color: #fde68a;
+      font-size: 9px;
+      font-weight: 800;
+      padding: 1px 6px;
+      border-radius: 99px;
+      display: inline-block;
+    }
+
+    .lb-speed-tag {
+      background: rgba(250, 204, 21, 0.2);
+      border: 1px solid rgba(250, 204, 21, 0.5);
+      color: #fef08a;
+      font-size: 9px;
+      font-weight: 800;
+      padding: 1px 5px;
+      border-radius: 99px;
+      display: inline-block;
+    }
+
+    .lb-list {
+      flex: 1;
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .lb-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 10px;
+      border-radius: 12px;
+      background: #022c16aa;
+      border: 1px solid #22c55e33;
+      font-size: 12.5px;
+    }
+
+    .lb-item.top-five {
+      border-color: #facc15aa;
+      background: linear-gradient(90deg, rgba(20, 83, 45, 0.9), rgba(6, 78, 59, 0.7));
+    }
+
+    .lb-rank {
+      font-size: 13px;
+      font-weight: 900;
+      width: 26px;
+      color: var(--y);
+      text-align: center;
+    }
+
+    .lb-info {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .lb-name {
+      font-weight: 700;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      color: #fff;
+    }
+
+    .lb-meta {
+      font-size: 10px;
+      color: #86efac;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .lb-score-col {
+      text-align: right;
+    }
+
+    .lb-score {
+      font-size: 14px;
+      font-weight: 900;
+      color: var(--y);
+    }
+
+    .lb-time {
+      font-size: 10px;
+      color: var(--lime);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="phone" id="app">
+    <!-- Instagram Story Progress Bars -->
+    <div class="bars" id="bars"></div>
+
+    <!-- Header -->
+    <div class="top">
+      <div class="avatar" title="GAIL (India) Limited">
+        <img src="gail_logo.png" alt="GAIL" onerror="this.onerror=null; this.src='logo_3d_clean_transparent.png';" />
+      </div>
+      <div class="who">
+        <strong>GAIL (India) Limited Presents</strong>
+        <span>#WahKyaEnergyHai · Sweety Ki Rasoi</span>
+      </div>
+      <div class="top-badge">
+        <span>⚡ PNG</span>
+      </div>
+    </div>
+
+    <!-- Question HUD -->
+    <div class="hud" id="hud" style="display:none">
+      <small>ENERGY</small>
+      <b id="score">0</b>
+      <small id="streakLab">streak 0</small>
+      <span class="hud-time" id="hudTime">⏱️ 0s</span>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast"></div>
+
+    <!-- Dynamic Stage where slides are rendered -->
+    <div id="stage"></div>
+
+    <!-- Leaderboard Modal -->
+    <div class="modal-backdrop" id="leaderboardModal">
+      <div class="modal-header">
+        <div class="modal-title">🏆 All-India Leaderboard</div>
+        <button class="modal-close" onclick="closeLeaderboard()">✕</button>
+      </div>
+      <!-- Live Contest Ticker & Reset Schedule Banner -->
+      <div class="lb-ticker-card">
+        <div class="lb-ticker-card-top">
+          <span class="lb-cycle-badge" id="modalCycleBadge">Loading Cycle...</span>
+          <span class="lb-countdown-pill" id="modalCountdownTicker">⏱️ Calculating...</span>
+        </div>
+        <div class="lb-schedule-note">
+          🔄 <strong>Resets on 10th, 20th & end of month.</strong> Top 5 unique players with highest Score + Speed
+          rating win <strong>Geotagged Trees</strong> planted by GAIL!
+          <div style="margin-top:3px;font-size:10.5px;color:#86efac;">
+            🛡️ <strong>Fair Play:</strong> Winners are unique for <strong>2 months</strong> (repeat win allowed after
+            60 days).
+          </div>
+        </div>
+      </div>
+
+      <!-- View Selector Tabs -->
+      <div class="lb-tabs-row">
+        <button class="lb-tab-btn active" id="lbTabActive" onclick="switchLbTab('active')">
+          ⚡ Active Cycle Rankings
+        </button>
+        <button class="lb-tab-btn" id="lbTabWinners" onclick="switchLbTab('winners')">
+          🌳 Past Winners (60d Log)
+        </button>
+      </div>
+
+      <div class="lb-list" id="leaderboardList"></div>
+      <div style="margin-top:10px;">
+        <button class="cta" onclick="closeLeaderboard()">CLOSE LEADERBOARD</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Hidden canvas for generating downloadable scorecards -->
+  <canvas id="scorecardCanvas" width="760" height="550" style="display:none;"></canvas>
+
+  <script>
+    (function () {
+      'use strict';
+
+      // --- CONFIGURATION ---
+      const REQUIRED_WATCH_SECONDS = 20;
+      const VIDEO_ID = 'ckVmdO80AkI';
+      const STORAGE_KEY_SECONDS = 'gail_sweety_watch_seconds';
+      const STORAGE_KEY_UNLOCKED = 'gail_sweety_bonus_unlocked';
+      const STORAGE_KEY_USER = 'gail_sweety_user_data';
+
+      // --- SCENES DEFINITION ---
+      // Scene 0: Intro
+      // Scenes 1-10: Clean Choice Questions & Lucky Card
+      // Scene 11: Sweety Ki Rasoi Gate (Lead collection & YouTube watch verification)
+      // Scene 12: Official Result Screen (Base 80 + YouTube 20 = 100, Tagline: "Jodo Pipeline. Jagao Shehar.")
+      const SCENES = [
+        {
+          type: 'intro',
+          emoji: '⚡',
+          kicker: 'GAIL CLEAN ENERGY CHALLENGE',
+          title: 'WAH KYA ENERGY HAI!',
+          sub: 'Har Choice Ka Score Hai.\n10 taps · Speed & Score · Sweety Ki Rasoi Bonus!',
+          cta: 'START CHALLENGE ▶'
+        },
+        {
+          type: 'q',
+          emoji: '🚗',
+          kicker: 'SCENARIO 1 · COMMUTE',
+          title: "You're going to work.",
+          sub: 'Pick your move (Time & Choice matter)',
+          choices: [
+            { t: 'Public transport', p: 12, clean: true, tags: ['commute'] },
+            { t: 'Carpool', p: 8, clean: true, tags: ['commute'] },
+            { t: 'Drive alone', p: -6, clean: false },
+          ]
+        },
+        {
+          type: 'q',
+          emoji: '🔥',
+          kicker: 'SCENARIO 2 · KITCHEN',
+          title: 'Dinner time. Cooking fuel?',
+          sub: 'This or that energy',
+          choices: [
+            { t: 'PNG (Piped Natural Gas)', p: 12, clean: true, tags: ['cook'] },
+            { t: 'LPG', p: 7, clean: true, tags: ['cook'] },
+            { t: 'Burn wood', p: -12, clean: false },
+          ]
+        },
+        {
+          type: 'q',
+          emoji: '🚦',
+          kicker: 'SCENARIO 3 · RED LIGHT',
+          title: 'Stuck at a 60-second signal.',
+          sub: 'Engine decision?',
+          choices: [
+            { t: 'ENGINE OFF', p: 9, clean: true, tags: ['saver'] },
+            { t: 'ENGINE ON', p: -7, clean: false },
+          ]
+        },
+        {
+          type: 'lucky',
+          emoji: '🎲',
+          kicker: 'LUCKY ENERGY',
+          title: 'ENERGY BOOST CARD!',
+          sub: "GAIL clean initiative bonus for showing up.",
+          bonus: 15
+        },
+        {
+          type: 'q',
+          emoji: '☀️',
+          kicker: 'SCENARIO 4 · POWER',
+          title: 'Society power upgrade.',
+          sub: 'What do you support?',
+          choices: [
+            { t: 'Solar / wind', p: 16, clean: true, tags: ['sun'] },
+            { t: 'Waste-to-energy', p: 11, clean: true, tags: ['waste'] },
+            { t: 'More coal', p: -14, clean: false },
+          ]
+        },
+        {
+          type: 'q',
+          emoji: '🛍️',
+          kicker: 'SCENARIO 5 · SHOP',
+          title: 'Shopping haul.',
+          sub: 'What goes in the bag?',
+          choices: [
+            { t: 'Sustainable picks', p: 11, clean: true, tags: ['voice'] },
+            { t: 'Fast fashion', p: -8, clean: false },
+          ]
+        },
+        {
+          type: 'q',
+          emoji: '🌳',
+          kicker: 'SCENARIO 6 · WEEKEND',
+          title: 'Neighbourhood weekend.',
+          sub: 'One green move',
+          choices: [
+            { t: 'Walk / cycle', p: 14, clean: true, tags: ['commute'] },
+            { t: 'Plant a tree', p: 10, clean: true, tags: ['tree'] },
+            { t: 'Litter', p: -9, clean: false },
+          ]
+        },
+        {
+          type: 'q',
+          emoji: '💡',
+          kicker: 'SCENARIO 7 · HOME',
+          title: 'Leaving home.',
+          sub: 'Lights & AC?',
+          choices: [
+            { t: 'Switch OFF', p: 8, clean: true, tags: ['saver'] },
+            { t: 'Leave ON', p: -6, clean: false },
+          ]
+        },
+        {
+          type: 'q',
+          emoji: '🚘',
+          kicker: 'SCENARIO 8 · TRIP',
+          title: 'Weekend out of town.',
+          sub: 'Fuel choice',
+          choices: [
+            { t: 'CNG', p: 13, clean: true, tags: ['commute'] },
+            { t: 'Carpool friends', p: 9, clean: true, tags: ['commute'] },
+            { t: 'Diesel / Petrol', p: -11, clean: false },
+          ]
+        },
+        {
+          type: 'q',
+          emoji: '📢',
+          kicker: 'SCENARIO 9 · VOICE',
+          title: 'Friend asks about clean energy.',
+          sub: 'Your move',
+          choices: [
+            { t: 'Challenge them to play!', p: 11, clean: true, tags: ['voice'] },
+            { t: 'Spread the message', p: 7, clean: true, tags: ['voice'] },
+            { t: 'Ignore', p: -6, clean: false },
+          ]
+        },
+        {
+          type: 'q',
+          emoji: '🗑️',
+          kicker: 'SCENARIO 10 · WASTE',
+          title: 'Festival leftovers.',
+          sub: 'How do you handle waste?',
+          choices: [
+            { t: 'Segregate + WTE', p: 14, clean: true, tags: ['waste'] },
+            { t: 'Burn garbage', p: -13, clean: false },
+          ]
+        },
+        // Scene 11: Sweety Ki Rasoi Gate (Continuance: Gate comes after the game, before result!)
+        { type: 'gate' },
+        // Scene 12: Final Result Screen
+        { type: 'result' }
+      ];
+
+      const LEVELS = [
+        { min: 0, n: '🌫️ Energy Explorer' },
+        { min: 40, n: '🌱 Green Starter' },
+        { min: 80, n: '⚡ Energy Pro' },
+        { min: 120, n: '🌿 Clean Energy Champion' },
+        { min: 155, n: '🏆 WAH KYA ENERGY MASTER' }
+      ];
+
+      // --- CONTEST CYCLES (Resets on 10th, 20th & end of month) ---
+      const SIXTY_DAYS_MS = 60 * 24 * 60 * 60 * 1000;
+      const STORAGE_KEY_LB_CYCLE = 'gail_wah_kya_lb_cycle_v4';
+      const STORAGE_KEY_PAST_WINNERS = 'gail_past_winners_v3';
+      const STORAGE_KEY_ORGANIZER_LOG = 'gail_organizer_entries_v1';
+
+      function getContestCycleInfo(now = new Date()) {
+        const y = now.getFullYear();
+        const m = now.getMonth(); // 0-indexed
+        const d = now.getDate();
+        const lastDay = new Date(y, m + 1, 0).getDate();
+
+        let cycleId, periodLabel, endTarget;
+
+        if (d <= 10) {
+          cycleId = `${y}-${String(m + 1).padStart(2, '0')}-P1`;
+          periodLabel = `1st – 10th Cycle`;
+          endTarget = new Date(y, m, 10, 23, 59, 59, 999);
+        } else if (d <= 20) {
+          cycleId = `${y}-${String(m + 1).padStart(2, '0')}-P2`;
+          periodLabel = `11th – 20th Cycle`;
+          endTarget = new Date(y, m, 20, 23, 59, 59, 999);
+        } else {
+          cycleId = `${y}-${String(m + 1).padStart(2, '0')}-P3`;
+          periodLabel = `21st – ${lastDay}th Cycle`;
+          endTarget = new Date(y, m, lastDay, 23, 59, 59, 999);
+        }
+
+        const diffMs = Math.max(0, endTarget.getTime() - now.getTime());
+        const diffSec = Math.floor(diffMs / 1000);
+        const days = Math.floor(diffSec / 86400);
+        const hours = Math.floor((diffSec % 86400) / 3600);
+        const mins = Math.floor((diffSec % 3600) / 60);
+        const secs = diffSec % 60;
+
+        return {
+          cycleId,
+          periodLabel,
+          endTarget,
+          diffMs,
+          days,
+          hours,
+          mins,
+          secs,
+          tickerText: `${days}d ${hours}h ${mins}m ${secs}s left · Hurry now!`,
+          shortTicker: `${days}d ${hours}h ${mins}m ${secs}s left`
+        };
+      }
+
+      const DEFAULT_LEADERBOARD = [
+        { name: 'Aarav Sharma', city: 'New Delhi', score: 184, time: 31, date: 'Today' },
+        { name: 'Priya Kulkarni', city: 'Noida', score: 177, time: 34, date: 'Today' },
+        { name: 'Vikram Mehta', city: 'Mumbai', score: 169, time: 38, date: 'Yesterday' },
+        { name: 'Ananya Roy', city: 'Bengaluru', score: 162, time: 35, date: 'Yesterday' },
+        { name: 'Rohan Gupta', city: 'GAIL Pata', score: 156, time: 41, date: '2d ago' },
+        { name: 'Kavita Iyer', city: 'Chennai', score: 180, time: 33, date: 'Today' },
+        { name: 'Sunita Mehra', city: 'Lucknow', score: 150, time: 42, date: '3d ago' }
+      ];
+
+      function getPastWinners() {
+        try {
+          const saved = localStorage.getItem(STORAGE_KEY_PAST_WINNERS);
+          if (saved) return JSON.parse(saved);
+        } catch (e) { }
+        return [
+          {
+            name: 'Kavita Iyer',
+            city: 'Chennai',
+            email: 'kavita.iyer@example.com',
+            wonTimestamp: Date.now() - (15 * 24 * 60 * 60 * 1000), // Won 15 days ago (<60d cooldown)
+            wonCycleId: '2026-09-P1',
+            score: 188,
+            rating: 232
+          },
+          {
+            name: 'Deepak Verma',
+            city: 'GAIL Vijaipur',
+            email: 'deepak.v@example.com',
+            wonTimestamp: Date.now() - (42 * 24 * 60 * 60 * 1000), // Won 42 days ago (<60d cooldown)
+            wonCycleId: '2026-08-P2',
+            score: 182,
+            rating: 226
+          },
+          {
+            name: 'Rajesh Nair',
+            city: 'Kochi',
+            email: 'rajesh.nair@example.com',
+            wonTimestamp: Date.now() - (75 * 24 * 60 * 60 * 1000), // Won 75 days ago (>60d elapsed -> can repeat!)
+            wonCycleId: '2026-07-P1',
+            score: 179,
+            rating: 220
+          }
+        ];
+      }
+
+      function savePastWinners(winners) {
+        try {
+          localStorage.setItem(STORAGE_KEY_PAST_WINNERS, JSON.stringify(winners));
+        } catch (e) { }
+      }
+
+      function check60DayCooldown(player, now = Date.now()) {
+        const pastWinners = getPastWinners();
+        const pEmail = (player.email || '').trim().toLowerCase();
+        const pName = (player.name || '').trim().toLowerCase();
+
+        for (const pw of pastWinners) {
+          const pwEmail = (pw.email || '').trim().toLowerCase();
+          const pwName = (pw.name || '').trim().toLowerCase();
+
+          const match = (pEmail && pwEmail && pEmail === pwEmail) || (pName && pwName && pName === pwName);
+          if (match) {
+            const elapsed = now - (pw.wonTimestamp || 0);
+            if (elapsed < SIXTY_DAYS_MS) {
+              const daysLeft = Math.ceil((SIXTY_DAYS_MS - elapsed) / (24 * 60 * 60 * 1000));
+              return { isCooldown: true, daysLeft, wonCycleId: pw.wonCycleId };
+            }
+          }
+        }
+        return { isCooldown: false };
+      }
+
+      function archiveCycleWinners(entries, cycleId) {
+        sortLeaderboard(entries);
+        const pastWinners = getPastWinners();
+        const now = Date.now();
+        let winnersAdded = 0;
+        const seenInCycle = new Set();
+
+        for (const item of entries) {
+          const key = (item.email || item.name || '').trim().toLowerCase();
+          if (seenInCycle.has(key)) continue;
+          seenInCycle.add(key);
+
+          const cd = check60DayCooldown(item, now);
+          if (cd.isCooldown) continue; // Skip to next unique eligible player
+
+          pastWinners.unshift({
+            name: item.name,
+            city: item.city || 'India',
+            email: item.email || '',
+            wonTimestamp: now,
+            wonCycleId: cycleId || 'Previous Cycle',
+            score: item.score,
+            rating: getLeaderboardRating(item)
+          });
+          winnersAdded++;
+          if (winnersAdded >= 5) break; // Top 5 unique winners
+        }
+        savePastWinners(pastWinners);
+      }
+
+      function getLeaderboard() {
+        const cycleInfo = getContestCycleInfo();
+        try {
+          const raw = localStorage.getItem(STORAGE_KEY_LB_CYCLE);
+          if (raw) {
+            const data = JSON.parse(raw);
+            if (data && data.cycleId === cycleInfo.cycleId && Array.isArray(data.entries)) {
+              return data.entries;
+            }
+            // Cycle expired! Reset triggered automatically on 10th, 20th, or end of month:
+            if (data && data.entries && data.entries.length > 0) {
+              archiveCycleWinners(data.entries, data.cycleId);
+            }
+          }
+        } catch (e) { }
+
+        const fresh = DEFAULT_LEADERBOARD.map(x => ({ ...x }));
+        saveLeaderboard(fresh);
+        return fresh;
+      }
+
+      function saveLeaderboard(lb) {
+        const cycleInfo = getContestCycleInfo();
+        try {
+          const payload = {
+            cycleId: cycleInfo.cycleId,
+            entries: lb,
+            lastUpdated: Date.now()
+          };
+          localStorage.setItem(STORAGE_KEY_LB_CYCLE, JSON.stringify(payload));
+        } catch (e) { }
+      }
+
+      // --- GAME STATE ---
+      let i = 0;
+      let score = 0;
+      let streak = 0;
+      let maxStreak = 0;
+      let tags = {};
+      let gameStartTime = null;
+      let gameEndTime = null;
+      let qStartTime = null;
+      let totalTimeSec = 0;
+      let totalSpeedBonus = 0;
+      let hudTimerInterval = null;
+      let isPicking = false;
+
+      // Sweety Ki Rasoi state
+      let watchedSeconds = 0;
+      let isBonusUnlocked = false;
+      let isSubscribed = false;
+      try {
+        isSubscribed = localStorage.getItem('gail_user_subscribed') === 'true';
+      } catch (e) { }
+      let player = null;
+      let pollTimer = null;
+      let lastCurrentTime = null;
+      let participantData = {
+        name: 'Sweety Mishra',
+        city: 'New Delhi',
+        email: ''
+      };
+
+      // Load session persistence for watch time
+      function loadPersistedState() {
+        try {
+          const storedSeconds = sessionStorage.getItem(STORAGE_KEY_SECONDS);
+          const storedUnlocked = sessionStorage.getItem(STORAGE_KEY_UNLOCKED);
+          const storedUser = sessionStorage.getItem(STORAGE_KEY_USER);
+
+          if (storedSeconds !== null) {
+            watchedSeconds = Math.min(REQUIRED_WATCH_SECONDS, parseFloat(storedSeconds) || 0);
+          }
+          if (storedUnlocked === 'true' || watchedSeconds >= REQUIRED_WATCH_SECONDS) {
+            isBonusUnlocked = true;
+            watchedSeconds = REQUIRED_WATCH_SECONDS;
+          }
+          if (storedUser) {
+            participantData = JSON.parse(storedUser);
+          }
+        } catch (e) { }
+      }
+
+      function persistWatchState() {
+        try {
+          sessionStorage.setItem(STORAGE_KEY_SECONDS, watchedSeconds.toFixed(2));
+          sessionStorage.setItem(STORAGE_KEY_UNLOCKED, isBonusUnlocked ? 'true' : 'false');
+        } catch (e) { }
+      }
+
+
+      function level() {
+        let c = LEVELS[0];
+        for (const l of LEVELS) if (score >= l.min) c = l;
+        return c;
+      }
+
+      function bars() {
+        const el = document.getElementById('bars');
+        el.innerHTML = '';
+        SCENES.forEach((_, idx) => {
+          const x = document.createElement('i');
+          if (idx < i) x.className = 'done';
+          if (idx === i) x.className = 'active';
+          x.innerHTML = '<b></b>';
+          el.appendChild(x);
+        });
+        const active = el.querySelector('i.active b');
+        if (active) {
+          active.style.animationDuration = SCENES[i].type === 'q' ? '12s' : '6s';
+        }
+      }
+
+      function toast(msg, bad = false) {
+        const t = document.getElementById('toast');
+        t.textContent = msg;
+        t.className = 'toast show' + (bad ? ' bad' : '');
+        clearTimeout(toast._t);
+        toast._t = setTimeout(() => t.classList.remove('show'), 1600);
+      }
+
+      function startHudTimer() {
+        if (hudTimerInterval) clearInterval(hudTimerInterval);
+        hudTimerInterval = setInterval(() => {
+          if (!gameStartTime || gameEndTime) return;
+          const elapsed = Math.floor((Date.now() - gameStartTime) / 1000);
+          const timeEl = document.getElementById('hudTime');
+          if (timeEl) timeEl.textContent = `⏱️ ${elapsed}s`;
+        }, 500);
+      }
+
+      function stopHudTimer() {
+        if (hudTimerInterval) {
+          clearInterval(hudTimerInterval);
+          hudTimerInterval = null;
+        }
+      }
+
+      // --- YOUTUBE PLAYER & WATCH VERIFICATION ---
+      function initYTPlayer() {
+        const ytDiv = document.getElementById('ytPlayer');
+        if (!ytDiv) return;
+        if (player || typeof YT === 'undefined' || !YT.Player) return;
+
+        try {
+          player = new YT.Player('ytPlayer', {
+            videoId: VIDEO_ID,
+            playerVars: {
+              playsinline: 1,
+              rel: 0,
+              modestbranding: 1,
+              enablejsapi: 1,
+              fs: 1
+            },
+            events: {
+              onReady: onPlayerReady,
+              onStateChange: onPlayerStateChange,
+              onError: onPlayerError
+            }
+          });
+        } catch (e) {
+          console.warn('Could not init YT.Player:', e);
+        }
+      }
+
+      window.onYouTubeIframeAPIReady = initYTPlayer;
+
+      function onPlayerReady(event) {
+        const pill = document.getElementById('playerStatePill');
+        if (pill) pill.textContent = 'Ready to Play';
+        startPolling();
+      }
+
+      function onPlayerStateChange(event) {
+        const pill = document.getElementById('playerStatePill');
+        const s = event.data;
+        if (s === YT.PlayerState.PLAYING) {
+          if (pill) {
+            pill.className = 'watch-state-pill playing';
+            pill.textContent = 'Playing ▶';
+          }
+          lastCurrentTime = player.getCurrentTime();
+        } else if (s === YT.PlayerState.PAUSED) {
+          if (pill) {
+            pill.className = 'watch-state-pill paused';
+            pill.textContent = 'Paused ⏸';
+          }
+          lastCurrentTime = null;
+        } else if (s === YT.PlayerState.BUFFERING) {
+          if (pill) {
+            pill.className = 'watch-state-pill';
+            pill.textContent = 'Buffering...';
+          }
+          lastCurrentTime = null;
+        } else if (s === YT.PlayerState.ENDED) {
+          if (pill) {
+            pill.className = 'watch-state-pill';
+            pill.textContent = 'Ended ✓';
+          }
+          lastCurrentTime = null;
+        } else {
+          if (pill) {
+            pill.className = 'watch-state-pill';
+            pill.textContent = 'Idle';
+          }
+          lastCurrentTime = null;
+        }
+      }
+
+      function onPlayerError(e) {
+        console.warn('YouTube notice:', e);
+        const pill = document.getElementById('playerStatePill');
+        if (pill) {
+          pill.className = 'watch-state-pill';
+          pill.textContent = 'Active';
+        }
+      }
+
+      function startPolling() {
+        if (pollTimer) clearInterval(pollTimer);
+        pollTimer = setInterval(pollWatchTime, 400);
+      }
+
+      function pollWatchTime() {
+        if (!player || typeof player.getPlayerState !== 'function') return;
+
+        let state;
+        try {
+          state = player.getPlayerState();
+        } catch (e) {
+          return;
+        }
+
+        // Only count when player is genuinely playing and page is active/visible
+        if (state === YT.PlayerState.PLAYING && !document.hidden) {
+          const currentTime = player.getCurrentTime();
+
+          if (lastCurrentTime !== null) {
+            const delta = currentTime - lastCurrentTime;
+
+            // Anti-cheat verification: Count ONLY small forward deltas (0.15s to 1.5s).
+            // Scrubbing/seeking forward is rejected.
+            if (delta > 0.15 && delta < 1.5) {
+              if (watchedSeconds < REQUIRED_WATCH_SECONDS) {
+                watchedSeconds = Math.min(REQUIRED_WATCH_SECONDS, watchedSeconds + delta);
+                persistWatchState();
+                updateWatchUI();
+
+                if (watchedSeconds >= REQUIRED_WATCH_SECONDS && !isBonusUnlocked) {
+                  triggerBonusUnlock();
+                }
+              }
+            }
+          }
+          lastCurrentTime = currentTime;
+        } else {
+          lastCurrentTime = null;
+        }
+      }
+
+      document.addEventListener('visibilitychange', function () {
+        if (document.hidden) lastCurrentTime = null;
+      });
+
+      function updateWatchUI() {
+        const timeDisp = document.getElementById('watchTimeDisplay');
+        const fill = document.getElementById('watchProgressFill');
+        const badge = document.getElementById('bonusBadge');
+        const alertBox = document.getElementById('watchSuccessAlert');
+        const previewChip = document.getElementById('gateBonusPreviewChip');
+
+        const roundedSec = Math.floor(watchedSeconds);
+        if (timeDisp) timeDisp.textContent = `Watched ${roundedSec}s / ${REQUIRED_WATCH_SECONDS}s`;
+
+        const pct = Math.min(100, (watchedSeconds / REQUIRED_WATCH_SECONDS) * 100);
+        if (fill) fill.style.width = pct + '%';
+
+        if (isBonusUnlocked) {
+          if (fill) fill.classList.add('completed');
+          if (badge) {
+            badge.className = 'bonus-unlock-status-pill status-unlocked';
+            badge.innerHTML = '<span>✓</span> <span>+20 Unlocked</span>';
+          }
+          const box = document.getElementById('bonusCardBox');
+          if (box) box.classList.add('bonus-verified-box');
+          if (alertBox) alertBox.style.display = 'flex';
+          if (previewChip) {
+            previewChip.classList.add('unlocked');
+            previewChip.innerHTML = '<span>⚡ +20 Bonus Points</span> <span>✓ Unlocked</span>';
+          }
+        }
+      }
+
+      function triggerBonusUnlock() {
+        if (isBonusUnlocked) return;
+        isBonusUnlocked = true;
+        persistWatchState();
+        updateWatchUI();
+        toast('🎉 +20 Sweety Ki Rasoi Bonus Unlocked!');
+
+        if (typeof confetti === 'function') {
+          try {
+            confetti({ particleCount: 50, spread: 60, origin: { y: 0.6 } });
+          } catch (e) { }
+        }
+      }
+
+      window.handleSubscribeClick = function (e) {
+        if (e) {
+          e.preventDefault();
+          e.stopPropagation();
+        }
+        isSubscribed = true;
+        try {
+          localStorage.setItem('gail_user_subscribed', 'true');
+        } catch (err) { }
+
+        const btn = document.getElementById('ytSubscribeBtn');
+        if (btn) {
+          btn.classList.add('subscribed');
+          btn.innerHTML = `
+            <svg class="yt-icon" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+            </svg>
+            <span>Subscribed ✓</span>
+          `;
+        }
+
+        toast('🎉 Subscribed to @GAILIndiaLimited! Enjoy the challenge.');
+
+        if (!isBonusUnlocked) {
+          triggerBonusUnlock();
+        }
+
+        if (typeof confetti === 'function') {
+          try {
+            confetti({ particleCount: 50, spread: 60, origin: { y: 0.7 } });
+          } catch (err) { }
+        }
+      };
+
+      window.handleResultSubscribeClick = function (e) {
+        if (e) {
+          e.preventDefault();
+          e.stopPropagation();
+        }
+        isSubscribed = true;
+        try {
+          localStorage.setItem('gail_user_subscribed', 'true');
+        } catch (err) { }
+
+        const btn = document.getElementById('ytResultSubscribeBtn');
+        if (btn) {
+          btn.style.background = 'rgba(34, 197, 94, 0.2)';
+          btn.style.borderColor = '#22c55e';
+          btn.style.color = '#86efac';
+          btn.innerHTML = `<span>✓ Subscribed to @GAILIndiaLimited</span>`;
+        }
+        toast('🎉 Subscribed to @GAILIndiaLimited!');
+
+        if (typeof confetti === 'function') {
+          try {
+            confetti({ particleCount: 50, spread: 60, origin: { y: 0.5 } });
+          } catch (err) { }
+        }
+      };
+
+      // --- SCENE RENDERING ENGINE ---
+      function render() {
+        bars();
+        const s = SCENES[i];
+        const stage = document.getElementById('stage');
+        const hud = document.getElementById('hud');
+
+        // HUD is shown only during game question slides
+        hud.style.display = (s.type === 'q' || s.type === 'lucky') ? 'block' : 'none';
+        document.getElementById('score').textContent = score;
+        document.getElementById('streakLab').textContent = 'streak ' + streak;
+
+        // 1. INTRO SLIDE
+        if (s.type === 'intro') {
+          const cycleInfo = getContestCycleInfo();
+          stage.innerHTML = `<div class="slide on intro-slide">
+            <div class="intro-top-meta">
+              <div class="emoji">${s.emoji}</div>
+              <div class="kicker">${s.kicker}</div>
+            </div>
+            <div class="intro-center">
+              <div class="intro-logo-card">
+                <img src="logo_3d_clean_transparent.png" alt="#WahKyaENERGYHai" class="intro-logo" />
+              </div>
+              <div class="contest-banner" onclick="openLeaderboard()">
+                <div class="contest-header-row">
+                  <div class="contest-badge">🏆 ALL-INDIA CONTEST</div>
+                  <div class="cycle-pill" id="startCyclePill">${cycleInfo.periodLabel}</div>
+                </div>
+                <div class="contest-ticker-box">
+                  <div class="ticker-live-dot"></div>
+                  <div class="ticker-time-text" id="startCountdownTicker">⏱️ ${cycleInfo.tickerText}</div>
+                </div>
+                <div class="contest-text">
+                  Leaderboard resets <strong>10th, 20th & month-end</strong>. Top 5 unique winners receive <strong>Geotagged Trees</strong> planted by GAIL!
+                  <div style="margin-top:2px;font-size:10.5px;color:#86efac;">Winners unique for 2 months (repeat win allowed after 60 days).</div>
+                </div>
+                <div class="contest-sublink">Tap to view Live Leaderboard & Rankings ➔</div>
+              </div>
+              <p class="sub">${s.sub.replace(/\n/g, '<br>')}</p>
+            </div>
+            <div class="intro-bottom">
+              <button class="cta" onclick="startGame()">${s.cta}</button>
+              <button class="ghost" onclick="openLeaderboard()">🏆 VIEW LIVE LEADERBOARD</button>
+            </div>
+          </div>`;
+          return;
+        }
+
+        // 2. LUCKY BOOST SLIDE
+        if (s.type === 'lucky') {
+          stage.innerHTML = `<div class="slide on">
+            <div class="emoji">${s.emoji}</div>
+            <div class="kicker">${s.kicker}</div>
+            <h1>${s.title}</h1>
+            <p class="sub">${s.sub}</p>
+            <button class="cta" onclick="claimLucky(${s.bonus})">CLAIM +${s.bonus} ⚡</button>
+          </div>`;
+          return;
+        }
+
+        // 3. QUESTION SLIDE (SCENARIOS 1 to 10)
+        if (s.type === 'q') {
+          qStartTime = Date.now();
+          stage.innerHTML = `<div class="slide on">
+            <div class="emoji">${s.emoji}</div>
+            <div class="kicker">${s.kicker}</div>
+            <h1>${s.title}</h1>
+            <p class="sub">${s.sub}</p>
+            ${s.choices.map((c, idx) => `
+              <button class="choice good" id="choice-${idx}" onclick="pick(${idx})">
+                <span id="choice-icon-${idx}">🌱</span>
+                <span>${c.t}</span>
+              </button>
+            `).join('')}
+          </div>`;
+          return;
+        }
+
+        // 4. SWEETY KI RASOI GATE SLIDE (SCENE 11 - The Lead/Gate Page)
+        if (s.type === 'gate') {
+          stopHudTimer();
+          if (!gameEndTime) {
+            gameEndTime = Date.now();
+            totalTimeSec = Math.max(1, Math.round((gameEndTime - gameStartTime) / 1000));
+          }
+
+          stage.innerHTML = `
+          <div class="slide on sweety-gate-slide">
+            <!-- HERO SPLIT BANNER (Official Thumbnail Style) -->
+            <div class="hero-split-gate">
+              <div class="hero-split-left">
+                <span class="badge-pill-ep">A MINI SERIES · Season 2: Episode 1</span>
+                <div class="hero-title-prefix">GAIL Presents</div>
+                <h2 class="hero-title-main">Sweety Ki Rasoi</h2>
+                <p class="hero-title-sub">The Mishra Family's PNG Kitchen Story</p>
+              </div>
+              <div class="hero-split-right">
+                <div class="hero-views-badge">
+                  <svg viewBox="0 0 24 24"><path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+                  <span>4+ Million Views</span>
+                </div>
+                <div class="hero-right-quote">“Jodo Pipeline.<br>Jagao Shehar.”</div>
+                <div class="hero-right-subquote">Clean Natural Gas straight to your burner.</div>
+              </div>
+            </div>
+
+            <!-- GATE INTRODUCTORY COPY -->
+            <div class="gate-copy-banner">
+              <p class="gate-copy-headline">
+                Almost there! Enter your details to see your Energy Score. Watch 20 seconds of Sweety Ki Rasoi on this page to unlock +20 bonus points.
+              </p>
+              <div class="gate-score-pill-row">
+                <span class="score-chip-preview score-chip-base">⚡ Game Score: ${score} pts ${totalTimeSec ? `(⏱️ ${totalTimeSec}s)` : ''}</span>
+                <span class="score-chip-preview score-chip-bonus ${isBonusUnlocked ? 'unlocked' : ''}" id="gateBonusPreviewChip">
+                  <span>⚡ +20 Bonus Points</span>
+                  <span>${isBonusUnlocked ? '✓ Unlocked' : 'Watch to unlock'}</span>
+                </span>
+              </div>
+            </div>
+
+            <!-- BONUS CARD WITH YOUTUBE PLAYER & 20s VERIFICATION -->
+            <div class="bonus-card-box ${isBonusUnlocked ? 'bonus-verified-box' : ''}" id="bonusCardBox">
+              <div class="bonus-card-header">
+                <div class="bonus-card-title-group">
+                  <div class="bonus-spark-icon">⚡</div>
+                  <h3 class="bonus-card-title">+20 Bonus Points — Watch to unlock</h3>
+                </div>
+                <div class="bonus-unlock-status-pill ${isBonusUnlocked ? 'status-unlocked' : 'status-locked'}" id="bonusBadge">
+                  <span>${isBonusUnlocked ? '✓' : '🔒'}</span>
+                  <span>${isBonusUnlocked ? '+20 Unlocked' : 'Locked'}</span>
+                </div>
+              </div>
+
+              <p class="bonus-card-helper">
+                Play the episode here. Bonus unlocks only after 20 seconds of real watch time (skipping ahead does not count). You can also subscribe without leaving this page.
+              </p>
+
+              <!-- 16:9 Video Wrapper -->
+              <div class="video-wrapper-16-9">
+                <div id="ytPlayer"></div>
+              </div>
+
+              <!-- Live Watch Status -->
+              <div class="watch-status-box">
+                <div class="watch-status-top">
+                  <div class="watch-time-label">
+                    <span>⏱</span>
+                    <span id="watchTimeDisplay">Watched ${Math.floor(watchedSeconds)}s / 20s</span>
+                  </div>
+                  <div class="watch-state-pill" id="playerStatePill">
+                    Ready to Play
+                  </div>
+                </div>
+
+                <div class="watch-progress-track">
+                  <div class="watch-progress-fill ${isBonusUnlocked ? 'completed' : ''}" 
+                       id="watchProgressFill" 
+                       style="width: ${Math.min(100, (watchedSeconds / 20) * 100)}%;">
+                  </div>
+                </div>
+
+                <div class="watch-success-alert" id="watchSuccessAlert" style="display: ${isBonusUnlocked ? 'flex' : 'none'};">
+                  <span>🎉</span>
+                  <span>Watch time verified. +20 will be added on submit.</span>
+                </div>
+
+                <div class="test-helper-bar">
+                  <span>Anti-cheat: Continuous real playback only</span>
+                  <button type="button" onclick="window.simulateWatch()" style="background:none;border:none;color:#9CA3AF;font-size:10px;text-decoration:underline;cursor:pointer;">
+                    [Test / Simulate Unlock]
+                  </button>
+                </div>
+              </div>
+
+              <!-- In-Page GAIL Subscribe Widget -->
+              <div class="yt-subscribe-wrapper">
+                <div class="sub-brand-col">
+                  <div class="sub-avatar">
+                    <img src="gail_logo.png" alt="GAIL" onerror="this.onerror=null; this.src='logo_3d_clean_transparent.png';" />
+                  </div>
+                  <div class="sub-channel-meta">
+                    <span class="sub-channel-name">GAIL India Limited</span>
+                    <span class="sub-channel-handle">@GAILIndiaLimited · Official Channel</span>
+                  </div>
+                </div>
+
+                <!-- Official In-Page Subscribe Button -->
+                <button type="button" 
+                   class="btn-yt-subscribe ${isSubscribed ? 'subscribed' : ''}" 
+                   id="ytSubscribeBtn"
+                   onclick="window.handleSubscribeClick(event)"
+                   title="Subscribe to GAIL India Limited">
+                  <svg class="yt-icon" viewBox="0 0 24 24">
+                    <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                  </svg>
+                  <span>${isSubscribed ? 'Subscribed ✓' : 'Subscribe'}</span>
+                </button>
+
+                <div class="playlist-ref-link" style="color:#a7f3d0;font-size:11px;cursor:default;">
+                  <span>📺 Streaming Season 2: Episode 1 Right Here</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- LEAD CAPTURE FORM -->
+            <div class="lead-form-box">
+              <div class="form-title-row">
+                <div class="form-title-icon">✓</div>
+                <h3 class="form-title">Enter Your Details</h3>
+              </div>
+
+              <form id="leadGateForm" onsubmit="window.handleGateSubmit(event)" novalidate>
+                <div class="form-fields-group">
+                  <div class="input-field-wrapper">
+                    <label class="field-label">Full Name <span class="required-star">*</span></label>
+                    <input type="text" id="fullName" class="field-input" placeholder="e.g. Sweety Mishra" value="${participantData.name || ''}" required />
+                    <div class="field-error-msg" id="nameError">Please enter your full name.</div>
+                  </div>
+
+                  <div class="input-field-wrapper">
+                    <label class="field-label">City <span class="required-star">*</span></label>
+                    <input type="text" id="city" class="field-input" placeholder="e.g. New Delhi" value="${participantData.city || ''}" required />
+                    <div class="field-error-msg" id="cityError">Please enter your city.</div>
+                  </div>
+
+                  <div class="input-field-wrapper">
+                    <label class="field-label">Email ID <span class="required-star">*</span></label>
+                    <input type="email" id="email" class="field-input" placeholder="e.g. sweety@example.com" value="${participantData.email || ''}" required />
+                    <div class="field-error-msg" id="emailError">Please enter a valid email address.</div>
+                  </div>
+                </div>
+
+                <!-- Privacy Disclaimer (Exact Mandatory Text) -->
+                <div class="privacy-disclaimer">
+                  Your name, city and email are collected only to display your result and, if you opt in later, to share campaign updates from GAIL (India) Limited / Energy Connect. We do not sell your data. Do not share passwords or OTP. By submitting you confirm the details are yours and you are 18+ or have guardian consent.
+                </div>
+
+                <button type="submit" class="btn-submit-lead">
+                  <span>See my result</span>
+                  <span>🚀</span>
+                </button>
+              </form>
+            </div>
+          </div>`;
+
+          // Initialize YouTube player if script already loaded
+          setTimeout(initYTPlayer, 80);
+          return;
+        }
+
+        // 5. OFFICIAL RESULT SLIDE (SCENE 12)
+        if (s.type === 'result') {
+          stopHudTimer();
+          if (player && typeof player.pauseVideo === 'function') {
+            try { player.pauseVideo(); } catch (e) { }
+          }
+
+          // Final Score = Game Score (which is the base count) + 20 YouTube bonus if unlocked!
+          const finalScore = isBonusUnlocked ? (score + 20) : score;
+
+          // Auto-submit to leaderboard
+          const lb = getLeaderboard();
+          const newEntry = {
+            name: participantData.name || 'Participant',
+            email: participantData.email || '',
+            city: participantData.city || 'India',
+            score: finalScore,
+            gameScore: score,
+            ytBonus: isBonusUnlocked ? 20 : 0,
+            time: totalTimeSec || 32,
+            date: 'Just now',
+            timestamp: Date.now()
+          };
+          lb.push(newEntry);
+          sortLeaderboard(lb);
+          saveLeaderboard(lb);
+
+          // Discreetly record to Organizer Master Log
+          try {
+            const orgList = JSON.parse(localStorage.getItem(STORAGE_KEY_ORGANIZER_LOG) || '[]');
+            const cycleInfo = getContestCycleInfo();
+            const d = new Date();
+            const phaseName = cycleInfo.cycleId.endsWith('P1') ? 'Phase 1 (1st-10th)' : (cycleInfo.cycleId.endsWith('P2') ? 'Phase 2 (11th-20th)' : 'Phase 3 (21st-End)');
+            const existingIdx = orgList.findIndex(x => (x.email && newEntry.email && x.email.toLowerCase() === newEntry.email.toLowerCase()) || (x.name && x.name.toLowerCase() === (newEntry.name || '').toLowerCase() && Date.now() - (x.timestamp || 0) < 600000));
+            const orgItem = {
+              id: existingIdx >= 0 ? orgList[existingIdx].id : ('ENT-' + Date.now().toString(36).toUpperCase() + '-' + Math.floor(Math.random() * 900 + 100)),
+              name: newEntry.name,
+              email: newEntry.email,
+              city: newEntry.city,
+              score: newEntry.score,
+              gameScore: newEntry.gameScore,
+              ytBonus: newEntry.ytBonus,
+              time: newEntry.time,
+              rating: getLeaderboardRating(newEntry),
+              cycleId: cycleInfo.cycleId,
+              phase: phaseName,
+              month: d.toLocaleDateString('en-IN', { month: 'long', year: 'numeric' }),
+              monthKey: `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}`,
+              timestamp: Date.now(),
+              dateStr: d.toLocaleString('en-IN')
+            };
+            if (existingIdx >= 0) {
+              orgList[existingIdx] = { ...orgList[existingIdx], ...orgItem };
+            } else {
+              orgList.unshift(orgItem);
+            }
+            localStorage.setItem(STORAGE_KEY_ORGANIZER_LOG, JSON.stringify(orgList));
+          } catch (e) { }
+
+          const userRank = lb.findIndex(x => x === newEntry) + 1;
+          const userRating = getLeaderboardRating(newEntry);
+          const userSpeedBonus = getSpeedBonus(newEntry);
+          const userCooldown = check60DayCooldown(newEntry);
+
+          stage.innerHTML = `
+          <div class="slide on result-slide-v2">
+            <!-- MAIN HERO SCORECARD -->
+            <div class="result-hero-box">
+              <div class="res-salute">GAIL Clean Energy Certificate</div>
+              <h2 class="res-user-name">${escapeHtml(participantData.name || 'Participant')}</h2>
+              <div class="res-user-city">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                <span>${escapeHtml(participantData.city || 'India')}</span>
+              </div>
+
+              <div class="res-score-number">${finalScore} ⚡</div>
+              <div class="res-score-denom">Official Energy Points</div>
+
+              <!-- CHIPS: Game Score + YouTube +20 -->
+              <div class="res-chips-row">
+                <span class="res-chip res-chip-base">
+                  <span>⚡ Game Score ${score}</span>
+                </span>
+                ${isBonusUnlocked ? `
+                  <span class="res-chip res-chip-yt">
+                    <span>🎬 YouTube +20</span>
+                  </span>
+                ` : `
+                  <span class="res-chip" style="background:rgba(255,255,255,0.1);color:#aaa;">
+                    <span>🎬 YouTube +20 (Not Unlocked)</span>
+                  </span>
+                `}
+              </div>
+
+              <!-- Game Performance Breakdown Bar -->
+              ${gameStartTime ? `
+              <div class="perf-metrics-bar">
+                <div class="perf-metric-item">
+                  <span class="perf-metric-val">⏱️ ${totalTimeSec}s</span>
+                  <span class="perf-metric-label">Game Time</span>
+                </div>
+                <div class="perf-metric-sep"></div>
+                <div class="perf-metric-item">
+                  <span class="perf-metric-val">⚡ ${score}</span>
+                  <span class="perf-metric-label">Game Score</span>
+                </div>
+                <div class="perf-metric-sep"></div>
+                <div class="perf-metric-item">
+                  <span class="perf-metric-val">🎬 ${isBonusUnlocked ? '+20' : '+0'}</span>
+                  <span class="perf-metric-label">Bonus Pts</span>
+                </div>
+              </div>
+              ` : ''}
+
+              <!-- Top-5 Winner Qualifier Callout -->
+              ${userRank > 0 && userRank <= 5 ? `
+                ${userCooldown.isCooldown ? `
+                  <div style="background:rgba(245, 158, 11, 0.25);border:1.5px solid #f59e0b;border-radius:12px;padding:9px 12px;margin:10px 0 6px;text-align:center;font-size:12px;color:#fde68a;">
+                    🏅 <strong>GREAT SCORE!</strong> You ranked <strong>#${userRank}</strong> with <strong>${userRating} ⭐</strong>. Note: You have an active winner cooldown (${userCooldown.daysLeft}d left) under the 60-day fair-play rule. You can win a tree again after 60 days!
+                  </div>
+                ` : `
+                  <div style="background:linear-gradient(90deg, rgba(20,83,45,0.92), rgba(6,78,59,0.92));border:1.5px solid #facc15;border-radius:12px;padding:9px 12px;margin:10px 0 6px;text-align:center;font-size:12px;color:#fff;box-shadow:0 4px 15px rgba(250,204,21,0.25);">
+                    🌳 <strong>CONGRATULATIONS!</strong> You ranked <strong>#${userRank}</strong> on the Leaderboard with <strong>${userRating} ⭐</strong> (Score: ${finalScore} + Speed: +${userSpeedBonus})! You qualify for a <strong>Geotagged Tree</strong> planted in your name by GAIL!
+                  </div>
+                `}
+              ` : ''}
+
+              <!-- TAGLINE BANNER: Jodo Pipeline. Jagao Shehar. -->
+              <div class="result-tagline-box">
+                <div class="tagline-hindi-text">“Jodo Pipeline. Jagao Shehar.”</div>
+                <div class="tagline-sub-text">GAIL Piped Natural Gas (PNG) — Safe, 24×7 & Eco-Friendly</div>
+              </div>
+            </div>
+
+            <!-- ACTION BUTTONS -->
+            <div class="action-grid">
+              <button class="action-btn-hero" onclick="window.shareOnWhatsAppResult(${finalScore})">
+                <span>💬 Share on WhatsApp (+ Image)</span>
+              </button>
+              <button class="action-btn-secondary" onclick="window.downloadScorecardResult(${finalScore})">
+                <span>📥 Download Official PNG Scorecard</span>
+              </button>
+              <button class="action-btn-secondary" onclick="openLeaderboard()">
+                <span>🏆 View Leaderboard Rank (${userRank > 0 ? `#${userRank} · ${userRating} ⭐` : 'Live'})</span>
+              </button>
+              <button type="button" 
+                 class="action-btn-secondary" 
+                 id="ytResultSubscribeBtn"
+                 onclick="window.handleResultSubscribeClick(event)"
+                 style="${isSubscribed ? 'background:rgba(34, 197, 94, 0.2);border-color:#22c55e;color:#86efac;' : 'background:rgba(204,0,0,0.18);border-color:#ef4444;color:#fecaca;'}" 
+                 title="Subscribe to GAIL India Limited">
+                <span>${isSubscribed ? '✓ Subscribed to @GAILIndiaLimited' : '🔴 Subscribe @GAILIndiaLimited'}</span>
+              </button>
+              <button class="ghost" onclick="restart()">
+                <span>🔄 Play Challenge Again</span>
+              </button>
+            </div>
+          </div>`;
+
+          // Confetti celebration
+          if (typeof confetti === 'function') {
+            try {
+              confetti({ particleCount: 80, spread: 70, origin: { y: 0.4 } });
+            } catch (e) { }
+          }
+          return;
+        }
+      }
+
+      // --- GAMEPLAY HANDLERS ---
+      function startGame() {
+        gameStartTime = Date.now();
+        gameEndTime = null;
+        totalSpeedBonus = 0;
+        startHudTimer();
+        i++;
+        render();
+      }
+      window.startGame = startGame;
+
+      function jumpToGate() {
+        const gateIdx = SCENES.findIndex(s => s.type === 'gate');
+        if (gateIdx !== -1) {
+          i = gateIdx;
+          render();
+        }
+      }
+      window.jumpToGate = jumpToGate;
+
+      function pick(idx) {
+        if (isPicking) return;
+        isPicking = true;
+
+        const choices = SCENES[i].choices;
+        const c = choices[idx];
+        const qDurationSec = (Date.now() - qStartTime) / 1000;
+
+        choices.forEach((choice, cIdx) => {
+          const btn = document.getElementById(`choice-${cIdx}`);
+          const icon = document.getElementById(`choice-icon-${cIdx}`);
+          if (!btn) return;
+          btn.style.pointerEvents = 'none';
+
+          if (choice.p < 0 || !choice.clean) {
+            btn.className = 'choice bad revealed';
+            if (icon) icon.textContent = '🔴';
+          } else {
+            btn.className = 'choice good revealed';
+            if (icon) icon.textContent = '🌱';
+          }
+
+          if (cIdx === idx) {
+            btn.classList.add('selected');
+          }
+        });
+
+        score += c.p;
+        (c.tags || []).forEach(t => tags[t] = (tags[t] || 0) + 1);
+
+        if (c.clean) {
+          streak++;
+          maxStreak = Math.max(maxStreak, streak);
+
+          let speedBonus = 0;
+          if (qDurationSec < 3.0) speedBonus = 5;
+          else if (qDurationSec < 5.0) speedBonus = 3;
+          else if (qDurationSec < 8.0) speedBonus = 1;
+
+          if (speedBonus > 0) {
+            score += speedBonus;
+            totalSpeedBonus += speedBonus;
+          }
+
+          let streakBonus = 0;
+          let msg = `⚡ +${c.p} ENERGY!`;
+          if (speedBonus > 0) msg += ` + ⏱️+${speedBonus} Speed!`;
+          if (streak === 3) { streakBonus = 10; msg += ' 🌱 STREAK +10'; }
+          if (streak === 5) { streakBonus = 20; msg += ' ⚡ BOOST +20'; }
+          if (streak === 8) { streakBonus = 30; msg += ' 🔥 MASTER +30'; }
+          score += streakBonus;
+          toast(msg);
+        } else {
+          streak = 0;
+          toast(`${c.p} · streak broken`, true);
+        }
+
+        setTimeout(() => {
+          isPicking = false;
+          i++;
+          render();
+        }, 900);
+      }
+      window.pick = pick;
+
+      function claimLucky(n) {
+        score += n;
+        toast(`⚡ +${n} BONUS!`);
+        setTimeout(() => {
+          i++;
+          render();
+        }, 600);
+      }
+      window.claimLucky = claimLucky;
+
+      function restart() {
+        isPicking = false;
+        i = 0;
+        score = 0;
+        streak = 0;
+        maxStreak = 0;
+        tags = {};
+        gameStartTime = null;
+        gameEndTime = null;
+        totalSpeedBonus = 0;
+        totalTimeSec = 0;
+        stopHudTimer();
+        render();
+      }
+      window.restart = restart;
+
+      // --- GATE FORM VALIDATION & SUBMISSION ---
+      function validateEmail(email) {
+        const re = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+        return re.test(String(email).trim().toLowerCase());
+      }
+
+      window.handleGateSubmit = function (e) {
+        e.preventDefault();
+
+        const nameInput = document.getElementById('fullName');
+        const cityInput = document.getElementById('city');
+        const emailInput = document.getElementById('email');
+        const nameErr = document.getElementById('nameError');
+        const cityErr = document.getElementById('cityError');
+        const emailErr = document.getElementById('emailError');
+
+        const nameVal = nameInput ? nameInput.value.trim() : '';
+        const cityVal = cityInput ? cityInput.value.trim() : '';
+        const emailVal = emailInput ? emailInput.value.trim() : '';
+
+        let isValid = true;
+
+        if (!nameVal) {
+          if (nameErr) nameErr.style.display = 'block';
+          if (nameInput) nameInput.classList.add('invalid');
+          isValid = false;
+        } else {
+          if (nameErr) nameErr.style.display = 'none';
+          if (nameInput) nameInput.classList.remove('invalid');
+        }
+
+        if (!cityVal) {
+          if (cityErr) cityErr.style.display = 'block';
+          if (cityInput) cityInput.classList.add('invalid');
+          isValid = false;
+        } else {
+          if (cityErr) cityErr.style.display = 'none';
+          if (cityInput) cityInput.classList.remove('invalid');
+        }
+
+        if (!emailVal || !validateEmail(emailVal)) {
+          if (emailErr) emailErr.style.display = 'block';
+          if (emailInput) emailInput.classList.add('invalid');
+          isValid = false;
+        } else {
+          if (emailErr) emailErr.style.display = 'none';
+          if (emailInput) emailInput.classList.remove('invalid');
+        }
+
+        if (!isValid) {
+          toast('⚠️ Please fill all required fields correctly.', true);
+          return;
+        }
+
+        participantData = {
+          name: nameVal,
+          city: cityVal,
+          email: emailVal
+        };
+
+        try {
+          sessionStorage.setItem(STORAGE_KEY_USER, JSON.stringify(participantData));
+        } catch (err) { }
+
+        // Immediately record lead to Organizer Master Log so participant details are 100% captured
+        try {
+          const orgList = JSON.parse(localStorage.getItem(STORAGE_KEY_ORGANIZER_LOG) || '[]');
+          const cycleInfo = getContestCycleInfo();
+          const d = new Date();
+          const phaseName = cycleInfo.cycleId.endsWith('P1') ? 'Phase 1 (1st-10th)' : (cycleInfo.cycleId.endsWith('P2') ? 'Phase 2 (11th-20th)' : 'Phase 3 (21st-End)');
+          const existingIdx = orgList.findIndex(x => (x.email && x.email.toLowerCase() === emailVal.toLowerCase()) || (x.name && x.name.toLowerCase() === nameVal.toLowerCase() && Date.now() - (x.timestamp || 0) < 600000));
+          const orgItem = {
+            id: 'ENT-' + Date.now().toString(36).toUpperCase() + '-' + Math.floor(Math.random() * 900 + 100),
+            name: nameVal,
+            email: emailVal,
+            city: cityVal,
+            score: score || 0,
+            gameScore: score || 0,
+            ytBonus: isBonusUnlocked ? 20 : 0,
+            time: totalTimeSec || 32,
+            rating: (score || 0) + (isBonusUnlocked ? 20 : 0),
+            cycleId: cycleInfo.cycleId,
+            phase: phaseName,
+            month: d.toLocaleDateString('en-IN', { month: 'long', year: 'numeric' }),
+            monthKey: `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}`,
+            timestamp: Date.now(),
+            dateStr: d.toLocaleString('en-IN')
+          };
+          if (existingIdx >= 0) {
+            orgList[existingIdx] = { ...orgList[existingIdx], ...orgItem };
+          } else {
+            orgList.unshift(orgItem);
+          }
+          localStorage.setItem(STORAGE_KEY_ORGANIZER_LOG, JSON.stringify(orgList));
+        } catch (err) { }
+
+        // Advance to Result Screen!
+        i = SCENES.findIndex(s => s.type === 'result');
+        render();
+      };
+
+      // Simulator for test verification
+      window.simulateWatch = function () {
+        watchedSeconds = REQUIRED_WATCH_SECONDS;
+        triggerBonusUnlock();
+      };
+
+      // --- LEADERBOARD RATING & SORTING (Considers BOTH Score AND Time) ---
+      function getSpeedBonus(item) {
+        const t = Math.max(10, Number(item.time) || 45);
+        // Faster completion awards speed rating points (benchmark 60s, +1.5 pts per sec saved)
+        return Math.max(0, Math.round((60 - t) * 1.5));
+      }
+
+      function getLeaderboardRating(item) {
+        const s = Number(item.score) || 0;
+        const speedBonus = getSpeedBonus(item);
+        return s + speedBonus;
+      }
+
+      function sortLeaderboard(lb) {
+        lb.sort((a, b) => {
+          const ratingA = getLeaderboardRating(a);
+          const ratingB = getLeaderboardRating(b);
+          if (ratingB !== ratingA) return ratingB - ratingA;
+          if ((Number(b.score) || 0) !== (Number(a.score) || 0)) return (Number(b.score) || 0) - (Number(a.score) || 0);
+          return (Number(a.time) || 999) - (Number(b.time) || 999);
+        });
+      }
+
+
+      // --- LEADERBOARD VIEWS & 60-DAY COOLDOWN WINNER SELECTION ---
+      let currentLbTab = 'active';
+
+      window.switchLbTab = function (tab) {
+        currentLbTab = tab;
+        const tabActiveBtn = document.getElementById('lbTabActive');
+        const tabWinnersBtn = document.getElementById('lbTabWinners');
+        if (tabActiveBtn && tabWinnersBtn) {
+          if (tab === 'active') {
+            tabActiveBtn.classList.add('active');
+            tabWinnersBtn.classList.remove('active');
+          } else {
+            tabActiveBtn.classList.remove('active');
+            tabWinnersBtn.classList.add('active');
+          }
+        }
+        renderLeaderboardView();
+      };
+
+      function renderLeaderboardView() {
+        const listEl = document.getElementById('leaderboardList');
+        if (!listEl) return;
+
+        if (currentLbTab === 'winners') {
+          // Render Past Winners 60-Day Log
+          const past = getPastWinners();
+          const now = Date.now();
+          if (!past || past.length === 0) {
+            listEl.innerHTML = `<div style="text-align:center;padding:24px 10px;color:#86efac;font-size:12px;">No past winners archived yet. Current cycle in progress!</div>`;
+            return;
+          }
+
+          listEl.innerHTML = past.map((item, idx) => {
+            const elapsed = now - (item.wonTimestamp || 0);
+            const isWithin60 = elapsed < SIXTY_DAYS_MS;
+            const daysLeft = Math.max(0, Math.ceil((SIXTY_DAYS_MS - elapsed) / (24 * 60 * 60 * 1000)));
+            const wonDate = item.wonTimestamp ? new Date(item.wonTimestamp).toLocaleDateString('en-IN', { day: 'numeric', month: 'short' }) : 'Recent';
+
+            return `<div class="lb-item">
+              <div class="lb-rank">🌳</div>
+              <div class="lb-info">
+                <div class="lb-name">${escapeHtml(item.name)} <span style="font-size:10px;opacity:0.75;">· ${escapeHtml(item.city || 'India')}</span></div>
+                <div class="lb-meta">
+                  <span>Cycle: ${escapeHtml(item.wonCycleId || 'GAIL')} (${wonDate})</span>
+                  <span>· ⚡ ${item.score || 0} pts</span>
+                </div>
+              </div>
+              <div class="lb-score-col">
+                ${isWithin60 ? `
+                  <div class="lb-cooldown-badge">🔒 60d Cooldown (${daysLeft}d left)</div>
+                ` : `
+                  <div style="background:rgba(34,197,94,0.2);border:1px solid #22c55e;color:#86efac;font-size:9px;font-weight:800;padding:1px 6px;border-radius:99px;">
+                    ✓ 60d Elapsed · Can Repeat
+                  </div>
+                `}
+              </div>
+            </div>`;
+          }).join('');
+          return;
+        }
+
+        // Active Cycle View
+        const lb = getLeaderboard();
+        sortLeaderboard(lb);
+
+        const now = Date.now();
+        let eligibleWinnerCount = 0;
+        const awardedUniqueKeys = new Set();
+
+        listEl.innerHTML = lb.map((item, idx) => {
+          const rank = idx + 1;
+          let rankBadge = `#${rank}`;
+          if (rank === 1) rankBadge = '🥇';
+          else if (rank === 2) rankBadge = '🥈';
+          else if (rank === 3) rankBadge = '🥉';
+
+          const rating = getLeaderboardRating(item);
+          const speedBonus = getSpeedBonus(item);
+
+          // Unique player check & 60-day cooldown check
+          const pKey = (item.email || item.name || '').trim().toLowerCase();
+          const cooldownStatus = check60DayCooldown(item, now);
+
+          let isWinner = false;
+          let winnerLabel = '';
+
+          if (cooldownStatus.isCooldown) {
+            winnerLabel = `<span class="lb-cooldown-badge">🏅 Prev Winner (${cooldownStatus.daysLeft}d Cooldown)</span>`;
+          } else if (!awardedUniqueKeys.has(pKey) && eligibleWinnerCount < 5) {
+            isWinner = true;
+            eligibleWinnerCount++;
+            awardedUniqueKeys.add(pKey);
+            winnerLabel = `<span style="background:#22c55e;color:#052e16;font-size:9px;font-weight:800;padding:1px 6px;border-radius:99px;">🌱 Tree Winner</span>`;
+            if (rank > 3) rankBadge = '🌳';
+          } else if (awardedUniqueKeys.has(pKey)) {
+            winnerLabel = `<span style="font-size:9px;opacity:0.7;">(Duplicate player)</span>`;
+          }
+
+          return `<div class="lb-item ${isWinner ? 'top-five' : ''}">
+            <div class="lb-rank">${rankBadge}</div>
+            <div class="lb-info">
+              <div class="lb-name">${escapeHtml(item.name)} <span style="font-size:10.5px;opacity:0.75;">· ${escapeHtml(item.city || 'India')}</span></div>
+              <div class="lb-meta">
+                ${winnerLabel}
+                <span>⚡ ${item.score} pts</span>
+                <span>· ⏱️ ${item.time || 35}s</span>
+                ${speedBonus > 0 ? `<span class="lb-speed-tag">+${speedBonus} Speed</span>` : ''}
+              </div>
+            </div>
+            <div class="lb-score-col">
+              <div class="lb-score">${rating} ⭐</div>
+              <div class="lb-time">Rank Rating</div>
+            </div>
+          </div>`;
+        }).join('');
+      }
+
+      function updateAllContestTickers() {
+        const info = getContestCycleInfo();
+
+        const startTickerEl = document.getElementById('startCountdownTicker');
+        if (startTickerEl) startTickerEl.textContent = `⏱️ ${info.tickerText}`;
+
+        const startCyclePill = document.getElementById('startCyclePill');
+        if (startCyclePill) startCyclePill.textContent = info.periodLabel;
+
+        const modalTickerEl = document.getElementById('modalCountdownTicker');
+        if (modalTickerEl) modalTickerEl.textContent = `⏱️ ${info.tickerText}`;
+
+        const modalCycleBadge = document.getElementById('modalCycleBadge');
+        if (modalCycleBadge) modalCycleBadge.textContent = info.periodLabel;
+      }
+
+      // Live Ticker Interval (Updates every second!)
+      setInterval(updateAllContestTickers, 1000);
+
+      // --- LEADERBOARD MODAL ---
+      window.openLeaderboard = function () {
+        const modal = document.getElementById('leaderboardModal');
+        updateAllContestTickers();
+        renderLeaderboardView();
+        modal.classList.add('open');
+      };
+
+      window.closeLeaderboard = function () {
+        document.getElementById('leaderboardModal').classList.remove('open');
+      };
+
+      function escapeHtml(str) {
+        if (!str) return '';
+        return str.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#039;");
+      }
+
+      function loadImage(src) {
+        return new Promise((resolve) => {
+          const img = new Image();
+          img.onload = () => resolve(img);
+          img.onerror = () => resolve(null);
+          img.src = src;
+          if (img.complete) resolve(img);
+        });
+      }
+
+      // --- HIGH RESOLUTION SCORECARD CANVAS GENERATOR ---
+      function generateScorecardCanvas(finalScore, callback) {
+        const canvas = document.getElementById('scorecardCanvas');
+        const ctx = canvas.getContext('2d');
+        const W = 760;
+        const H = 550;
+        canvas.width = W;
+        canvas.height = H;
+
+        const grad = ctx.createLinearGradient(0, 0, 0, H);
+        grad.addColorStop(0, '#031c0e');
+        grad.addColorStop(0.35, '#063519');
+        grad.addColorStop(0.7, '#042412');
+        grad.addColorStop(1, '#021208');
+        ctx.fillStyle = grad;
+        ctx.fillRect(0, 0, W, H);
+
+        const radGrad = ctx.createRadialGradient(W / 2, 135, 10, W / 2, 135, 260);
+        radGrad.addColorStop(0, 'rgba(34, 197, 94, 0.45)');
+        radGrad.addColorStop(1, 'rgba(0, 0, 0, 0)');
+        ctx.fillStyle = radGrad;
+        ctx.fillRect(0, 0, W, H);
+
+        ctx.strokeStyle = '#4ade8099';
+        ctx.lineWidth = 3;
+        roundRect(ctx, 12, 12, W - 24, H - 24, 28, false, true);
+
+        loadImage('logo_3d_clean_transparent.png').then((pipeLogoImg) => {
+          ctx.textAlign = 'center';
+          ctx.fillStyle = '#a3e635';
+          ctx.font = '800 16px "Poppins", sans-serif';
+          ctx.fillText('GAIL (INDIA) LIMITED · #WAHKYAENERGYHAI', W / 2, 50);
+
+          ctx.fillStyle = '#facc15';
+          ctx.font = '900 84px "Poppins", sans-serif';
+          ctx.shadowColor = 'rgba(250, 204, 21, 0.65)';
+          ctx.shadowBlur = 24;
+          ctx.fillText(`${finalScore} ⚡`, W / 2, 140);
+          ctx.shadowBlur = 0;
+
+          ctx.fillStyle = '#86efac';
+          ctx.font = 'bold 22px "Poppins", sans-serif';
+          ctx.fillText(`🏆 ${participantData.name || 'Participant'} (${participantData.city || 'India'})`, W / 2, 185);
+
+          // Tagline: "Jodo Pipeline. Jagao Shehar."
+          ctx.fillStyle = '#fde047';
+          ctx.font = '800 24px "Poppins", sans-serif';
+          ctx.fillText('“JODO PIPELINE. JAGAO SHEHAR.”', W / 2, 230);
+
+          // Breakdown Chips
+          ctx.font = '700 16px "Poppins", sans-serif';
+          ctx.fillStyle = '#dcfce7';
+          ctx.fillText(`Game Score: ${score} Pts   |   YouTube Bonus: ${isBonusUnlocked ? '+20 Pts (Verified)' : '0 Pts'}   |   Total: ${finalScore} Pts`, W / 2, 265);
+
+          if (gameStartTime) {
+            const speedBonus = getSpeedBonus({ time: totalTimeSec });
+            const rating = finalScore + speedBonus;
+            ctx.font = '600 13px "Poppins", sans-serif';
+            ctx.fillStyle = '#86efac';
+            ctx.fillText(`Game: ${score} pts in ${totalTimeSec}s  |  Speed Bonus: +${speedBonus}  |  Rank Rating: ${rating} ⭐`, W / 2, 295);
+          }
+
+          // Footer
+          ctx.font = '500 13px "Poppins", sans-serif';
+          ctx.fillStyle = '#a7f3d0';
+          ctx.fillText('Sweety Ki Rasoi Mini-Series Challenge · Clean Energy PNG', W / 2, 510);
+
+          if (pipeLogoImg) {
+            const logoW = 280, logoH = 140;
+            ctx.drawImage(pipeLogoImg, (W - logoW) / 2, 330, logoW, logoH);
+          }
+
+          if (typeof callback === 'function') callback(canvas);
+        });
+      }
+
+      function roundRect(ctx, x, y, width, height, radius, fill, stroke) {
+        ctx.beginPath();
+        ctx.moveTo(x + radius, y);
+        ctx.lineTo(x + width - radius, y);
+        ctx.quadraticCurveTo(x + width, y, x + width, y + radius);
+        ctx.lineTo(x + width, y + height - radius);
+        ctx.quadraticCurveTo(x + width, y + height, x + width - radius, y + height);
+        ctx.lineTo(x + radius, y + height);
+        ctx.quadraticCurveTo(x, y + height, x, y + height - radius);
+        ctx.lineTo(x, y + radius);
+        ctx.quadraticCurveTo(x, y, x + radius, y);
+        ctx.closePath();
+        if (fill) ctx.fill();
+        if (stroke) ctx.stroke();
+      }
+
+      window.downloadScorecardResult = function (finalScore) {
+        toast('Generating Scorecard PNG...');
+        generateScorecardCanvas(finalScore, function (canvas) {
+          try {
+            const dataUrl = canvas.toDataURL('image/png');
+            const link = document.createElement('a');
+            link.download = `GAIL_WahKyaEnergy_${participantData.name || 'Scorecard'}_${finalScore}pts.png`;
+            link.href = dataUrl;
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            toast('✅ Scorecard image downloaded!');
+          } catch (e) {
+            toast('Download ready');
+          }
+        });
+      };
+
+      window.shareOnWhatsAppResult = function (finalScore) {
+        const speedBonus = getSpeedBonus({ time: totalTimeSec });
+        const rating = finalScore + speedBonus;
+        const waText = `⚡ I scored *${finalScore} Energy Points* on GAIL *#WahKyaENERGYHai* (Sweety Ki Rasoi Season 2: Episode 1)! 🌿\n\n` +
+          `Participant: ${participantData.name} (${participantData.city})\n` +
+          `${gameStartTime ? `Game Performance: Score ${score} pts in ${totalTimeSec}s (Speed Bonus +${speedBonus}) ⏱️\nLeaderboard Rating: ${rating} ⭐ (Score + Speed)\n` : ''}` +
+          `Breakdown: Game Score ${score} + YouTube Bonus ${isBonusUnlocked ? '+20' : '+0'} = ${finalScore} pts\n` +
+          `Tagline: "Jodo Pipeline. Jagao Shehar."\n\n` +
+          `Watch Sweety Ki Rasoi and test your energy score here 👇\n` +
+          `https://gail-connect-d9e21.web.app`;
+
+        toast('Preparing customized certificate for WhatsApp...');
+
+        generateScorecardCanvas(finalScore, function (canvas) {
+          canvas.toBlob(async function (blob) {
+            const waUrl = `https://api.whatsapp.com/send?text=${encodeURIComponent(waText)}`;
+            if (blob) {
+              const fileName = `GAIL_WahKyaEnergy_${(participantData.name || 'Scorecard').replace(/\s+/g, '_')}_${finalScore}pts.png`;
+              const file = new File([blob], fileName, { type: 'image/png' });
+
+              // 1. Mobile Native Share (iOS / Android): attaches the actual personalized scorecard image directly into WhatsApp!
+              if (navigator.canShare && navigator.canShare({ files: [file] })) {
+                try {
+                  await navigator.share({
+                    files: [file],
+                    title: 'GAIL #WahKyaENERGYHai Scorecard',
+                    text: waText
+                  });
+                  toast('✅ Certificate shared with WhatsApp!');
+                  return;
+                } catch (err) {
+                  if (err && err.name === 'AbortError') return; // User cancelled share sheet
+                  console.log('Native share failed, falling back', err);
+                }
+              }
+
+              // 2. Desktop fallback: Copy image to clipboard so user can press Ctrl+V in WhatsApp chat
+              try {
+                if (navigator.clipboard && window.ClipboardItem) {
+                  await navigator.clipboard.write([
+                    new ClipboardItem({ 'image/png': blob })
+                  ]);
+                  toast('📋 Certificate copied! Press Ctrl+V in WhatsApp to paste your image.');
+                }
+              } catch (clipErr) {
+                console.log('Clipboard copy not supported', clipErr);
+              }
+            }
+
+            // 3. Download the scorecard image so user has it saved
+            window.downloadScorecardResult(finalScore);
+
+            // 4. Open WhatsApp with formatted text
+            setTimeout(() => {
+              window.open(waUrl, '_blank');
+            }, 450);
+          }, 'image/png');
+        });
+      };
+
+      // --- INITIALIZE ROUTING ---
+      loadPersistedState();
+
+      const initParams = new URLSearchParams(window.location.search);
+      if (window.location.hash === '#gate' || initParams.has('gate')) {
+        i = SCENES.findIndex(s => s.type === 'gate');
+      } else if (window.location.hash === '#result' || window.location.hash === '#scorecard' || initParams.has('result') || initParams.has('scorecard')) {
+        i = SCENES.findIndex(s => s.type === 'result');
+      }
+
+      render();
+      updateAllContestTickers();
+    })();
+  </script>
+</body>
+
+</html>
