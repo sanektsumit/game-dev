@@ -1,0 +1,9 @@
+{
+  "cleanUrls": true,
+  "rewrites": [
+    { "source": "/scorecard", "destination": "/scorecard.html" },
+    { "source": "/result", "destination": "/scorecard.html" },
+    { "source": "/organizer", "destination": "/organizer.html" },
+    { "source": "/admin", "destination": "/admin.html" }
+  ]
+}
